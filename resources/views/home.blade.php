@@ -17,7 +17,8 @@
 		width: 300px;
 		height: 100%;
 		overflow-x: hidden;
-
+		border-right: 1px solid black;
+  height: 500px;
 		z-index: 2;
 	}
 	.sidebar ul li {
@@ -31,7 +32,7 @@
 		line-height: 60px;
 		margin-bottom: 20px;
 		font-weight: 600;
-		border-bottom: 1px solid black;
+	
 	}
 	.sidebar ul li:first-child:hover{
 		background: none;
@@ -48,12 +49,14 @@
 		min-width: 30%;
 		font-size: 24px;
 		text-align: center;
+		
 	}
 
 </style>
 
 <body>
-	
+<div class="row">
+    <div class="col-sm-3 col-md-6 col-lg-4">
 	<div class="sidebar">
 		<div class="sidebar-header d-flex justify-content-center align-items-center px-3 py-4">
     <img
@@ -76,9 +79,9 @@
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="{{route('AjouterArticle')}}">
 					<i class="fas fa-bullhorn"></i>
-					<div class="title" onclick="mafonction();">Publier un nouveau article</div>
+					<div class="title">Publier un nouveau article</div>
 				</a>
 			</li>
 			<li>
@@ -101,10 +104,13 @@
 			</li>
 		</ul>
 	</div>
-	<script>
 
-	</script>
- 
+</div>
+
+<div class="col-sm-9 col-md-6 col-lg-8" id="demo">
+	
+</div>
+
 </body>
 </html>
 

@@ -22,3 +22,4 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/admin', [App\Http\Controllers\AdminController::class, 'espaceAdmin'])->name('admin');
+Route::get('/AjouterArticle', [App\Http\Controllers\ArticleController::class, 'article'])->name('AjouterArticle');
