@@ -1,5 +1,6 @@
 <!-- create.blade.php -->
 
+
 @extends('layouts.app')
 @section('content')
 <style>
@@ -12,8 +13,15 @@
   }
 </style>
 
+
 <div class="carduper">
+@if(session()->get('success'))
+    <div class="alert alert-success">
+      {{ session()->get('success') }}  
+    </div><br />
+  @endif
   <div class="card-header">
+    
     Créer un Article
   </div>
 
@@ -28,7 +36,7 @@
       </div><br />
     @endif
 
-      <form method="post" action="">
+      <form method="post" action="{{route('addArticleBD')}}">
          @csrf
           <div class="form-group">
               <label for="titre">Titre de l'article:</label>
@@ -44,8 +52,12 @@
 
           </div>
           <br/>
-         <center> <button type="submit" class="btn btn-primary">Créer</button></center>
+         <center> 
+           <button type="submit" class="btn btn-primary">Créer</button>
+                  
+        </center>
       </form>
+      
   </div>
 </div>
 @endsection

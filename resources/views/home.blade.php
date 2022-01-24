@@ -79,13 +79,13 @@
 				</a>
 			</li>
 			<li>
-				<a href="{{route('AjouterArticle')}}">
+				<a href="{{route('addArticle')}}">
 					<i class="fas fa-bullhorn"></i>
 					<div class="title">Publier un nouveau article</div>
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="{{route('AllArticles')}}">
 					<i class="fa fa-check-circle"></i>
 					<div class="title" id="togg1">Voir tous les articles</div>
 				</a>

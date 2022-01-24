@@ -20,6 +20,24 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//retourne tous les article
+Route::get('/AllArticles','\App\Http\Controllers\ArticleController@getAllArticle')->name('AllArticles');
 
-Route::get('/admin', [App\Http\Controllers\AdminController::class, 'espaceAdmin'])->name('admin');
-Route::get('/AjouterArticle', [App\Http\Controllers\ArticleController::class, 'article'])->name('AjouterArticle');
+//retourne le formulaire d'ajout articla
+Route::get('/addArticle', '\App\Http\Controllers\ArticleController@addArticle')
+		->name('addArticle');
+
+//ajout article au base de donnee 		
+Route::Post('/addArticleBD', '\App\Http\Controllers\ArticleController@addArticleBD')
+		->name('addArticleBD');
+
+//retourne le formulaire de modifier article
+Route::get('/editArticle/{id}', '\App\Http\Controllers\ArticleController@editArticle')
+		->name('editArticle');
+
+//modifier article au base de donnee 		
+Route::Post('/editArticleBD', '\App\Http\Controllers\ArticleController@editArticleBD')->name('editArticleBD');
+
+//supprimer un article dans la base de donnee
+Route::get('/deleteArticleBD/{id}', '\App\Http\Controllers\ArticleController@deleteArticleBD')
+		->name('deleteArticleBD');
