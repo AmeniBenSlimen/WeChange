@@ -12,10 +12,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/','\App\Http\Controllers\ArticleController@getAllArticle1')->name('welcome');
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Auth::routes();
 
@@ -41,3 +39,5 @@ Route::Post('/editArticleBD', '\App\Http\Controllers\ArticleController@editArtic
 //supprimer un article dans la base de donnee
 Route::get('/deleteArticleBD/{id}', '\App\Http\Controllers\ArticleController@deleteArticleBD')
 		->name('deleteArticleBD');
+
+Route::get('/welcome','\App\Http\Controllers\ArticleController@getAllArticle')->name('AllArticles');

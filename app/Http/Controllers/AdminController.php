@@ -6,11 +6,7 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-    public function espaceAdmin()
-    {
+    public function updateProfile(){
         
-   
-        return view('admin');
-
     }
 }

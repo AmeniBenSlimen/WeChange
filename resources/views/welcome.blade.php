@@ -1,268 +1,917 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+<html>
 
-        <title>Bienvenue...</title>
+<head>
+  <meta charset="utf-8">
+  <title>Personal Website</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+  <style>
+    @charset "utf-8";
 
-        
-        <!-- Styles -->
-        <style>
-          
-           body{
-              margin: 0px;
-              padding: 0px;
-              font-family: 'Montserrat', sans-serif;
-          
-               }
-nav{
-    display:flex;
+@import url
+(
+  "https://fonts.googleapis.com/css2? family = Poppins: ital, wght @ 0,100; 0,200; 0,300; 0,400; 0,500; 0,600; 0,700; 0,800; 0,900; 1,100; 1,200; 1.300; 1.400; 1.500; 1.600; 1.700; 1.800; 1.900 & display = trocar "
+);
+
+body {
+  background-color: #f6f5f5;
+  font-family: "poppins", sans-serif;
+  margin: 0px;
+  padding: 0px;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+section {
+  width: 100%;
+  height: 95vh;
+  background-image: url("images/img11.jpg");
+  background-size: 100% 100%; 
+  /*   background-color: #000000; */
+  
+  background-repeat: no-repeat;
+  position: relative;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  background-color: #ffffff;
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+  padding: 0px 5%;
+}
+nav ul {
+  display: flex;
+}
+.toggle {
+  display: none;
+}
+
+nav ul li a {
+  margin: 30px;
+  font-family: myriad pro regular;
+  color: #505050;
+  font-size: 18px;
+  font-weight: 700;
+}
+.logo {
+  font-family: RoadTest;
+  color: #000000;
+  font-size: 22px;
+  font-weight: 1000;
+}
+.active {
+  color: #2d2a2a;
+  font-weight: bold;
+}
+
+.clearfix {
+  clear: both;
+}
+
+.text-container p:nth-child(1) {
+  font-family: calibri;
+  font-weight: bold;
+  color: #6d6d6d;
+  font-size: 22px;
+}
+.text-container p:nth-child(2) {
+  font-family: calibri;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #1a1a1a;
+  font-size: 60px;
+}
+.text-container p:nth-child(3) {
+  font-family: myriad pro regular;
+  color: #403e3e;
+  font-size: 30px;
+  line-height: 30px;
+}
+
+.text-container p {
+  margin: 45px 0px 25px;
+  width:100%;
+  line-height: 0px;
+
+  
+}
+.text-container button {
+  width: 130px;
+  height: 42px;
+  border-radius: 10px;
+  font-family: calibri;
+  font-weight: bold;
+  font-size: 14px;
+  outline: none;
+  margin: 0px 10px;
+}
+.text-container {
+  position: absolute;
+  left: 13%;
+  top: 42%;
+  transform: translate(-13%, -42%);
+ 
+}
+.hire-btn {
+  border: 2px solid #373636;
+  color: #373636;
+  background-color: transparent;
+}
+.down-cv {
+  background-color: #0b0b0b;
+  color: #fff;
+  border: none;
+}
+button:active {
+  transform: scale(1.1);
+}
+
+.about-container {
+  width: 80%;
+  height: 330px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+  display: flex;
+  margin: -7% auto 20px auto;
+  position: relative;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.about-container img {
+  height: 250px;
+}
+.about-text {
+  width: 500px;
+}
+.about-text p:nth-child(1) {
+  color: #403e3e;
+  font-family: myriad pro;
+  font-weight: bold;
+  font-size: 23px;
+  line-height: 0px;
+}
+.about-text p:nth-child(2) {
+  color: #3e3d3d;
+  font-size: 13px;
+  font-family: myriad pro;
+  font-weight: bold;
+  line-height: 5px;
+}
+.about-text p:nth-child(3),
+.about-text p:nth-child(4) {
+  color: #7e7d7d;
+  font-family: calibri;
+  font-size: 16px;
+}
+
+.about-text p:nth-child(4) {
+  margin-bottom: 30px;
+}
+
+.about-text a {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 40px;
+  color: #ffffff;
+  outline: none;
+  border: 2px;
+  font-family: calibri;
+  background-color: #262525;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  margin-top: 30px;
+  padding: 10px;
+}
+
+.about-text a:hover {
+  color: #8f8f8f;
+}
+
+.services {
+  height: 1050px;
+  background-color: #ffffff;
+  padding: 2% 10% 0px 10%;
+}
+.services-text p:nth-child(1) {
+  font-family: calibri;
+  font-weight: bold;
+  color: #1d1c1c;
+  font-size: 30px;
+  line-height: 0px;
+}
+.services-text p:nth-child(2) {
+  font-family: calibri;
+  font-weight: bold;
+  color: #3e3d3d;
+  font-size: 15px;
+  line-height: 5px;
+}
+.services-text p:nth-child(3) {
+  font-family: calibri;
+  color: #7e7d7d;
+  font-size: ;
+}
+.services-text {
+  width: 95%;
+  margin: 50px 0px;
+}
+.box-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.box-1,
+.box-2,
+.box-3,
+.box-4,
+.box-5,
+.box-6 {
+  width: 300px;
+  height: 380px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 2px 2px 18px rgba(0, 0, 0, 0.3);
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  margin: 0px 4px;
+}
+
+.box-container img {
+  height: 170px;
+  width: 97%;
+  margin: 1px 0 0 0;
+}
+
+.box-container img:hover {
+  transition: 1s;
+  transform: scale(1.5);
+}
+
+.box-1 {
+  background: rgba(0, 0, 0, 0.02);
+}
+.box-2 {
+  background: rgba(0, 0, 0, 0.02);
+}
+.box-3 {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.box-4 {
+  background: rgba(0, 0, 0, 0.02);
+}
+.box-5 {
+  background: rgba(0, 0, 0, 0.02);
+}
+.box-6 {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+/* .box-1 span,
+.box-2 span,
+.box-3 span,
+.box-4 span,
+.box-5 span,
+.box-6 span {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #000000;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: calibri;
+  font-weight: bold;
+} */
+
+.box-1 p:nth-child(2),
+.box-2 p:nth-child(2),
+.box-3 p:nth-child(2),
+.box-4 p:nth-child(2),
+.box-5 p:nth-child(2),
+.box-6 p:nth-child(2) {
+  color: #8f8f8f;
+  font-family: calibri;
+  font-size: 23px;
+  line-height: 0px;
+}
+
+.box-1 p:nth-child(3),
+.box-2 p:nth-child(3),
+.box-3 p:nth-child(3),
+.box-4 p:nth-child(3),
+.box-5 p:nth-child(3),
+.box-6 p:nth-child(3) {
+  font-family: calibri;
+  color: #8f8f8f;
+  text-align: center;
+  width: 230px;
+  margin: 0px 0px 15px 0px;
+}
+
+.box-1 a,
+.box-2 a,
+.box-3 a,
+.box-4 a,
+.box-5 a,
+.box-6 a {
+  width: 100px;
+  height: 30px;
+  background-color: #000000;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.box-container a:hover {
+  color: #8f8f8f;
+}
+
+.contact-me {
+  width: 100%;
+  height: 280px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /*   background-image: url("https://i.ibb.co/1rmXYj8/project-in-your-mind.png"); */
+  background-color: #000000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 0px 20px 0px;
+}
+.contact-me p {
+  color: #ffffff;
+  font-size: 30px;
+  font-family: calibri;
+  font-weight: bold;
+  border-bottom: 2px solid #ffffff;
+}
+.contact-me a {
+  width: 200px;
+  height: 40px;
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px;
+  box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.3);
+}
+
+.contact-me a:hover {
+  color: #7e7d7d;
+}
+
+#contact {
+  -webkit-user-select: none; /* Chrome/Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
+  width: 200px;
+  height: 40px;
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px;
+  box-shadow: 2px 2px 15px rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+}
+
+#contact:hover {
+  color: #7e7d7d;
+}
+#contact:active {
+  background: #444;
+}
+
+#contactForm {
+  display: none;
+  z-index: 1500;
+  border: 8px solid #000000;
+  padding: 0.5em;
+  width: 400px;
+  text-align: center;
+  background: #fff;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+}
+
+input,
+textarea {
+  margin: 0.8em auto;
+  font-family: inherit;
+  text-transform: inherit;
+  font-size: inherit;
+  border: 2px solid black;
+  display: block;
+  width: 280px;
+  padding: 0.4em;
+}
+textarea {
+  height: 80px;
+  resize: none;
+}
+
+.formBtn {
+  width: 150px;
+  height: 40px;
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.formBtn:hover {
+  color: #7e7d7d;
+}
+
+footer p {
+  font-family: calibri;
+}
+footer p:nth-child(1) {
+  font-size: 30px;
+  font-weight: bold;
+  color: #191919;
+  line-height: 10px;
+}
+footer p:nth-child(2) {
+  font-size: 16px;
+  color: #7e7d7d;
+  width: 600px;
+  text-align: center;
+}
+footer {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.social-icons a {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e6e3e3;
+  margin: 10px 10px;
+  border-radius: 50%;
+}
+.social-icons {
+  display: flex;
+}
+.social-icons i,
+.social i {
+  color: #000000;
+}
+.social-icons a:hover {
+  background-color: #000000;
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+  transition: all ease 0.5s;
+}
+.social-icons a:hover i,
+.social a:hover i {
+  color: #ffffff;
+  transition: all ease 0.5s;
+}
+
+.copyright {
+  color: #565555;
+  font-size: 12px;
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  transform: translateX(-50%);
+}
+.social {
+  position: fixed;
+  top: 50%;
+  right: 0px;
+  transform: translateY(-50%);
+}
+.social a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  margin: 0px;
+  padding: 0px;
+  line-height: 0px;
+  background-color: #ffffff;
+  border: 1px solid #cbcbcb;
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+}
+.social a:hover {
+  background-color: #000000;
+  transition: all ease 0.5s;
+}
+.social i {
+  font-size: 20px;
+  color: #2b2b2b;
+}
+
+.social-icons2 a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 10px;
+  color: #000000;
+  font-weight: 600;
+}
+.social-icons2 {
+  display: flex;
+}
+
+.social-icons2 a:hover {
+  color: #7e7d7d;
+}
+
+@media (max-width: 1000px) {
+  * {
+    box-sizing: border-box;
+  }
+  .model {
+    height: 460px;
+    left: 90%;
+    transform: translateX(-90%);
+  }
+  .text-container {
+    top: 46%;
+  }
+  .text-container button {
+    margin: 5px;
+  }
+  .about-container {
+    width: 90%;
+    border-radius: 10px;
+  }
+  .about-container img {
+    height: 200px;
+  }
+  .about-text {
+    width: 400px;
+  }
+  .about-text p:nth-child(1) {
+    font-size: 20px;
+  }
+  .about-text p:nth-child(2) {
+    font-size: 10px;
+  }
+
+  .about-text p:nth-child(3),
+  .about-text p:nth-child(4) {
+    font-size: 14px;
+  }
+  .services {
+    padding: 2% 5% 0px 5%;
+  }
+  .box-container {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .services {
+    height: auto;
+  }
+  .box-1,
+  .box-2,
+  .box-3,
+  .box-4,
+  .box-5,
+  .box-6 {
+    flex-grow: 1;
+    margin: 10px;
+  }
+  .contact-me {
+    height: 200px;
+  }
+  .contact-me p {
+    font-size: 26px;
+  }
+  .contact-me a {
+    font-size: 14px;
+    height: 35px;
+    width: 160px;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 750px) {
+  .toggle {
+    display: block;
+    float: right;
+    cursor: pointer;
+  }
+
+  .toggle:before {
+    content: "\f0c9";
+    font-family: fontAwesome;
+    line-height: 30px;
+    z-index: 1;
+    cursor: pointer;
+  }
+
+  .toggle.active:before {
+    content: "\f00d";
+    position: fixed;
+    right: 25px;
+    line-height: 0px;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 750px) {
+  section {
+    background-image: none;
+    background-color: #f7f7f7;
+  }
+  .model {
+    display: none;
+  }
+
+  .text-container p:nth-child(2) {
+    line-height: 40px;
+    margin: 0px;
+    padding: 0px;
+  }
+  .text-container {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+  }
+  nav ul {
+    margin: 0px;
+    padding: 0px;
+    background-color: #ebeef4;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+    display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom: 3px solid #F8AD18;
+    z-index: 1;
+    display: none;
+  }
+  nav ul li {
+    padding: 10px;
+  }
+  nav ul li a {
+    font-family: calibri;
+    font-size: 1.4em;
+    text-transform: uppercase;
+    color: #5c5c5c;
+  }
+  nav ul li a:hover {
+    color: #121212;
+  }
 
+  nav.active ul {
+    display: flex !important;
+  }
+  .about-container {
+    top: 0px;
+    flex-direction: column;
+    width: 90%;
+    height: auto;
+    padding: 30px 0px;
+    align-items: center;
+  }
+  .about-text {
+    width: 90%;
+    text-align: center;
+  }
+  .services-text {
+    width: 100%;
+  }
+  .contact-me {
+    height: 180px;
+  }
+  .contact-me p {
+    font-size: 18px;
+  }
+  .contact-me a {
+    width: 150px;
+    height: 33px;
+  }
+  footer p:nth-child(2) {
+    width: 90%;
+  }
 }
-nav h1{
-    color: #717171;
-    font-family: 'Playfair Display', serif;
-    font-size: 30px;
-}
-nav .navv{
-    margin-top: 3px;
-    margin-left: 300px;
-}
-nav .navv a{
-    text-decoration: none;
-    color: #F8AD18;
-    margin-right: 10px;
-    border-bottom: 1px solid #F8AD18;
-    padding-bottom: 5px;
-}
-nav img{
-    height: 110px;
-    width: 110px;
+nav  img{
+  height: 90px;
+    width: 150px;
     border-radius: 50%;
 }
-
-header{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: url('images/img6.jpeg');
-    background-size: cover;
-    color: #fff;
-    padding: 90px;
-    width: 86.6%;
-    height: 300px;
-    background-size: 100% 100%;
-
-
-
-}
-header h1{
-    font-family: 'Playfair Display', serif;
-    font-size: 50px;
-    color: #fff;
-}
-header h4{
-    margin-top: -20px;
-    font-size: 30px;
-    text-align: center;
-    /*border-bottom: 1px solid black;*/
-    color: #fff;
-
+.back{
+  background:url('images/img7.jpg');
 }
 
+  </style>
+</head>
 
-.art{
-    margin-top: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.art .content .card{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-bottom:20px;
-}
-.art .content .card .left{
-   flex: 0 0 30%;
-   padding: 20px;
-   background-color: #62B7F1 ;
-   color:#fff;
-}
-.art .content .card .right img{
-    height:300px;
-    width: 400px;
-    margin-top: 5px;
-}
+<body>
+  <section id="home">
+    <!--navigation------------------------->
+    <nav>
+      <!--logo-->
+      <a href="#home"><img src="images/logo.jpg"></a>
+      <!--menu-->
+      <ul>
+        <li><a href="#home" class="active">Acceuil</a></li>
+        <li><a href="#sobre">Organization</a></li>
+        <li><a href="#projetos">Articles</a></li>
+        <li><a href="#contato">Contact</a></li>
+        <li><a href="#redes">Réseaux sociaux</a></li>
+      </ul>
+      <!--bars--------------->
+      <div class="toggle"></div>
 
-
-/* CUSTOM FOOTER CONTACT ROW */
-.widget_text.col-full.contact-us-wrapper {
-    max-width: 100%;
-    background-color: #F8AD18;
-    padding: 20px;
-    text-align: center;
-}
-.site-footer {
-    border-top: none;
-    padding: 0;
-}
-.contactrow {
-    max-width: 80em;
-    margin: auto;
-}
-.contactrow .column {
-   margin: 5px;
-   text-align: center;
-     display: inline-block;
-     width: 30%;
-}
-.column, .column a {
-    font-family: 'Roboto Slab', serif;
-    font-size: 16px;
-    font-weight: 300;
-    color: #F8AD18;
-}
-
-
-.column h4 {
-    font-family: 'Oswald', sans-serif;
-    color: #eee;
-    font-size: 20px;
-    text-transform: uppercase; 
-    letter-spacing: 2px;
-}
-
-
-.column h4 .fa {
-    color: #F8AD18;
-    font-size: 30px;
-    background: none;
-}
-.column h4 .fab {
-    color: #F8AD18;
-    font-size: 30px;
-    background: none;
-}
-
-.contactrow {
-    max-width: 90em;
-    margin: auto;
-    border-top: 3px solid #F8AD18;
-   
-}
-/* END CUSTOM FOOTER CONTACT ROW */
-
-
-
-
-        </style>
-
-    </head>
-    <body>
-        <nav>
-        <img src="images/logo.jpg">
-        <div class="navv">
-            <a href="#">Acceuil</a>
-            <a href="{{ route('login') }}">Espace Administrateur</a>
-            <a href="#contact">Contact</a>
-            <a href="#contact">Plus d'informations</a>
-        </div>
     </nav>
-      <header>
-        <h1>We Change </h1>
-        <h4>Pour mieux connaître la nature...</h4>
-        
-    </header>
+    <div class="clearfix"></div>
+  </section>
 
-    <section class="art" id="articles">
+  <!--text----------------------->
 
-        <div class="content">
-            <div class="card">
-                <div class="left">
-                    <h1>Nos valeurs</h1>
-                    <p>Mangez sainement mais délicieusement. Nos clients sont rois, nos clients sont nos patrons.</p>
-                </div>
-                <div class="right">
-                    <img src="images/img1.jpg" alt="">
-                </div>
-            </div>
+  <div class="text-container" style="margin-reight:5px">
+    <p>Organization</p>
+    <p>We Change</p>
+    <p style="color:black;size:50px">“Ne cherchez pas la nature <br>de l’Esprit,<br> mais plutôt l’esprit de la Nature.”</p>
+   
+  </div>
 
-            <div class="card">
-                <div class="left">
-                    <h1>Nos recettes</h1>
-                    <p>Nous mettons à votre disposition les recettes de nos burgers les plus délicieux ! </p>
-                </div>
-                <div class="right">
-                    <img src="images/img3.jpg" alt="">
-                </div>
-            </div>
-        </div>
-    </section>
+  <!--model---------------------->
+  
 
-<div class="contactrow" style="background-color: #757777 ">
-    <div class="column phone1">
-        <h4><i class="fa fa-phone"></i><br>
-        Numéro de Télephone</h4>
-        <p>+216 93461607</p>
+  <div id="sobre" class="about-container">
+    <!--img-->
+    <img src="images/logo.jpg" />
+
+    <!--about-me-text-->
+    <div class="about-text">
+      <p>Organization</p>
+      <p>We Change ..</p>
+      <p>Association non gouvernementale
+à but non lucratif, à pour objectif renforcer la citoyenneté et développement
+au Nord-Est West (Siliana, Béja, Kef
+et Jandouba)</p>
+      <!--       <a href="#">Contact Me</a> -->
+ 
     </div>
+  </div>
 
-    <div class="column hours3">
-        <h4><i class="fa fa-location-arrow"></i> <br>
-       adresse</h4>
-        <p>Rue 18 janvier Siliana<br>
-6100 Siliana</p>
+  <!--services-container---------------------------->
+  <div id="projetos" class="services ">
+    <!--text-->
+    <div class="services-text ">
+      
+      <br><br>
     </div>
+    
+    <div class="box-container">
+      <!--1------------->
+      @foreach($aa as $a)
+        @foreach($img as $im)
+      <div class="box-1">
+        <img src="images/{{$im->URL}}">
+        <p class="heading">{{$a->titre}}</p>
+        <p class="details">{{$a->description}}</p>
+        <p class="heading" style="font-size:10px;margin-left:120px">{{$a->created_at}}</p>
 
-    <div class="column email2">
-        <h4><i class="fa fa-envelope"></i><br>
-        Adresse E-Mail </h4>
-        <a href="wechange.organization08@gmail.com">wechange.organization08@gmail.com</a>
-    </div>
-
-
-    <div class="column hours3">
-        <h4><i class="fab fa-facebook"></i> <br>
-       Facebook</h4>
-        <a href="https://www.facebook.com/WeChangeSl">We Change</a>
-    </div>
-
-    <div class="column hours3">
-        <h4><i class="fab fa-linkedin"></i> <br>
-       Linkedin</h4>
-        <a href="https://www.facebook.com/WeChangeSl">We Change</a>
-    </div>
-
-    <div class="column hours3">
-        <h4><i class="fab fa-twitter"></i> <br>
-       Linkedin</h4>
-        <a href="https://www.facebook.com/WeChangeSl">We Change</a>
-    </div>
-
+      </div>
+      @endforeach
+        @endforeach  
+      <!--2------------->
+      
+      <!--3------------->
+      
+      <br><br>
+    
+      <!--2------------->
      
-</div>
-  <!-- Site footer -->
+      <!--3------------->
+     
+    </div>
+  </div>
 
-        <!-- <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
+  <!--if you have any project in your mind contact me-->
+  <div id="contato" class="contact-me">
+    <p>Si vous souhaitez parler d'un projet, contactez-nous..</p>
+    <div id="contact"><a href="https://mail.google.com/mail/u/0/#inbox">E-mail</a></div>
+  </div>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
- -->
-            
-    </body>
+  
+
+  <!--footer--------------->
+  <footer id="redes">
+    <!--heading-->
+    <p>WE CHANGE</p>
+    <!--paragraph-->
+    <p>Contactez-nous à</p>
+    <!--social-->
+    <div class="social-icons">
+      <a target="blanck" class="linkedin" href="https://br.linkedin.com/in/wechange03"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+      <a target="blanck" class="twitter" href="https://twitter.com/wechange"><i class="fab fa-twitter"></i></a>
+      <a target="blanck" class="instagram" href="https://www.instagram.com/we_change/"><i class="fab fa-instagram"></i></a>
+      <a target="blanck" class="facebook" href="https://www.facebook.com/WeChangeSl"><i class="fa fa-facebook " aria-hidden="true"></i></a>
+    
+    </div>
+
+    <div class="social-icons2">
+
+      <a href="#home">Acceuil</a>
+      <a href="#sobre">Organization</a>
+      <a href="#projetos">Articles</a>
+      <a href="#contato">Contact</a>
+      <a href="#redes">Réseaux sociaux</a>
+
+    </div>
+    <!--copyright-->
+    <p class="copyright">Copyright 2022 We Change</p>
+  </footer>
+  <!--social-attach-bar-->
+  <div class="social">
+    <a target="blanck" class="linkedin" href="https://br.linkedin.com/in/wechange03"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+    <a target="blanck" class="twitter" href="https://twitter.com/wechange"><i class="fab fa-twitter"></i></a>
+    <a target="blanck" class="instagram" href="https://www.instagram.com/we_change/"><i class="fab fa-instagram"></i></a>
+    <a target="blanck" class="facebook" href="https://www.facebook.com/WeChangeSl"><i class="fab fa-facebook"></i></a>
+    
+    
+  </div>
+
+</body>
+<script>
+  $(document).ready(function () {
+  $(".toggle").click(function () {
+    $(".toggle").toggleClass("active");
+    $("nav").toggleClass("active");
+  });
+});
+
+$(function () {
+  // contact form animations
+  $("#contact").click(function () {
+    $("#contactForm").fadeToggle();
+  });
+  $(document).mouseup(function (e) {
+    var container = $("#contactForm");
+
+    if (
+      !container.is(e.target) && // if the target of the click isn't the container...
+      container.has(e.target).length === 0
+    ) {
+      // ... nor a descendant of the container
+      container.fadeOut();
+    }
+  });
+});
+
+</script>
 </html>

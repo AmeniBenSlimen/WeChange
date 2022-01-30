@@ -25,6 +25,7 @@
           <td>ID</td>
           <td>Titre de l'article </td>
           <td>Description de l'article  </td>
+          <td>Images  </td>
           
           
           <td colspan="2">Action</td>
@@ -33,24 +34,26 @@
 
     <tbody>
         @foreach($aa as $a)
+        @foreach($img as $im)
         <tr>
             <td>{{$a->id}}</td>
             <td>{{$a->titre}}</td>
             <td>{{$a->description}}</td>
+            
+            <td><img src="images/{{$im->URL}}" class="img-responsive" style="max-height:100px;max-width:100px"> </td>
             
             
            
             <td><a href="{{ route('editArticle', $a->id)}}" class="btn btn-primary">Modifier</a></td>
             <td>
                 
-                <a class="btn btn-sm btn-danger" href="{{route('deleteArticleBD',$a->id)}}">Supprimer</a>
-                
-               
-              
+                <a class="btn btn-sm btn-danger" href="{{route('deleteArticleBD',$a->id)}}" onclick="return confirm('Vous Êtes sûr de supprimer cet article ?')">Supprimer</a>
+
           
             </td>
         
         </tr>
+        @endforeach
         @endforeach
     </tbody>
   </table>

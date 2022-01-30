@@ -27,7 +27,13 @@
                             <label>Description de l'article</label>
                             <input type="text" value="{{$article->description}}" required name="description" class="form-control" 
                                 >
+                                
                          </div>
+                         <div class="form-group">
+                        <label>Photo</label>
+                        <input type="file"  name="URL" class="form-control" 
+                        value=""  placeholder="Choisissez une photo" multiple>
+                     </div>
 
                      
                          

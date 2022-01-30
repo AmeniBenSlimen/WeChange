@@ -45,10 +45,28 @@
 
           <div class="form-group">
               <label for="description">Description :</label>
-              <input type="text" class="form-control" name="description" required/>
+              <textarea type="text" class="form-control" name="description" required></textarea>
           </div>
-          
-                        </select>
+          <div class="form-group">
+                        <label>Photo</label>
+                        <input type="file"  name="URL" class="form-control" 
+                            placeholder="Choisissez une photo" multiple>
+                     </div>
+                     <div class="form-group">
+                          <label>Admin :</label>
+                          <select name="user_id" class="form-control">
+                                        <option value="">Aucune</option>
+                                        @foreach ($art as $ar)
+                                            @if($ar->user_id==$ar->id)
+                                            <option value="{{$ar->id}}" selected>{{$ar->name}}</option>
+                                            @else
+                                            <option value="{{$ar->id}}" >{{$ar->name}}</option>
+                                            @endif
+                                        @endforeach
+                                    </select>
+
+                      </div>
+                      
 
           </div>
           <br/>
