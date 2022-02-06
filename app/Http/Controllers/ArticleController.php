@@ -46,8 +46,8 @@ class ArticleController extends Controller
                             $imageName=time().'_'.$file->getClientOriginalName();
                             $request['article_id']=$article_id;
                             $request['URL']=$imageName;
-                            $file->move('img/photos/', $imageName);
-                            //Images::create($request->all());
+                            $file->move('imges/', $imageName);
+                            Images::create($request->all());
                         }
             
                      }  

@@ -41,3 +41,9 @@ Route::get('/deleteArticleBD/{id}', '\App\Http\Controllers\ArticleController@del
 		->name('deleteArticleBD');
 
 Route::get('/welcome','\App\Http\Controllers\ArticleController@getAllArticle')->name('AllArticles');
+
+//afficher le formulaire de contact
+Route::get('/contact', '\App\Http\Controllers\ContactController@contact')->name('contact');
+//Ajouter le contact a la base de donnéé
+Route::post('/contactBD', '\App\Http\Controllers\ContactController@contactBD')->name('contactBD');
+
