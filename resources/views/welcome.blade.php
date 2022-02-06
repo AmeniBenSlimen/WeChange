@@ -2,7 +2,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Personal Website</title>
+  <title>We Change Website</title>
   <link rel="stylesheet" type="text/css" href="css/style.css" />
   <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
   <style>
@@ -783,7 +783,7 @@ nav  img{
   <div class="text-container" style="margin-reight:5px">
     <p>Organization</p>
     <p>We Change</p>
-    <p style="color:black;size:50px">“Ne cherchez pas la nature <br>de l’Esprit,<br> mais plutôt l’esprit de la Nature.”</p>
+    <p style="color:black;size:30px">“Ne cherchez pas la nature <br>de l’Esprit,<br> mais plutôt l’esprit de la Nature.”</p>
    
   </div>
 
@@ -797,8 +797,8 @@ nav  img{
     <!--about-me-text-->
     <div class="about-text">
       <p>Organization</p>
-      <p>We Change ..</p>
-      <p>Association non gouvernementale
+      <p></p>
+      <p style="font-family: Times New Roman">Association non gouvernementale
 à but non lucratif, à pour objectif renforcer la citoyenneté et développement
 au Nord-Est West (Siliana, Béja, Kef
 et Jandouba)</p>
@@ -844,7 +844,7 @@ et Jandouba)</p>
   <!--if you have any project in your mind contact me-->
   <div id="contato" class="contact-me">
     <p>Si vous souhaitez parler d'un projet, contactez-nous..</p>
-    <div id="contact"><a href="https://mail.google.com/mail/u/0/#inbox">E-mail</a></div>
+    <div id="contact"><a href="{{route('contact')}}">E-mail</a></div>
   </div>
 
   

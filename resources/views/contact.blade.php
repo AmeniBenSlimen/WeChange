@@ -1,18 +1,83 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Laravel 8 Contact Form Example - NiceSnippets.com</title>
+    <title>Contacter nous</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin="anonymous" />
+    <style>
+        ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+nav  img{
+  height: 90px;
+    width: 150px;
+    border-radius: 50%;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  background-color: #ffffff;
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+  padding: 0px 5%;
+}
+nav ul {
+  display: flex;
+}
+.toggle {
+  display: none;
+}
+
+nav ul li a {
+  margin: 30px;
+  font-family: myriad pro regular;
+  color: #505050;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.active {
+  color: #2d2a2a;
+  font-weight: bold;
+}
+.clearfix {
+  clear: both;
+}
+
+    </style>
 </head>
 <body>
+<section id="home">
+    <!--navigation------------------------->
+    <nav>
+      <!--logo-->
+      <a href="{{route('welcome')}}"><img src="images/logo.jpg"></a>
+      <!--menu-->
+      <ul>
+        <li><a href="{{route('welcome')}}" class="active">Acceuil</a></li>
+        <li><a href="{{route('welcome')}}">Organization</a></li>
+        <li><a href="{{route('welcome')}}">Articles</a></li>
+        <li><a href="{{route('welcome')}}">Contact</a></li>
+        <li><a href="{{route('welcome')}}">Réseaux sociaux</a></li>
+      </ul>
+      <!--bars--------------->
+      <div class="toggle"></div>
+
+    </nav>
+    <div class="clearfix"></div>
+  </section>
     <div class="container">
         <div class="row mt-5 mb-5">
             <div class="col-8 offset-2 mt-5">
                 <div class="card">
-                    <div class="card-header bg-info">
+                    <div class="card-header" style="background-color:black">
                         <h3 class="text-white">Envoyer un Mail ...</h3>
                     </div>
                     <div class="card-body">
