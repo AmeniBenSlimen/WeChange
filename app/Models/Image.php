@@ -10,7 +10,6 @@ class Image extends Model
     use HasFactory;
     protected $fillable=['URL'];
 
-    public function setfilenamesattribute($value){
-        $this->attributes['URL']=json_encode($value);
+    /* public function setfilenamesattribute($value){
+        $this->attributes['URL']=json_encode($value); */
     }
-}

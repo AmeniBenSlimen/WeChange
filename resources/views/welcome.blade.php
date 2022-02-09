@@ -3,7 +3,9 @@
 <head>
   <meta charset="utf-8">
   <title>We Change Website</title>
-  <link rel="stylesheet" type="text/css" href="css/style.css" />
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
   <style>
     @charset "utf-8";
@@ -753,6 +755,46 @@ nav  img{
 .back{
   background:url('images/img7.jpg');
 }
+* {
+  margin: 0;
+  padding: 0%;
+}
+.container {
+  height: 40%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.search-bar {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  align-items: center;
+  border-radius: 60px;
+  border-color: rgba(129, 96, 221);
+  padding: 10px;
+}
+.search-bar input {
+  background: transparent;
+  flex: 1;
+  border: 1px solid black;
+  border-radius: 12px;
+  padding: 5p;
+  font-size: 20px;
+
+}
+::placeholder {
+  color: gray;
+  font-size:15px;
+}
+.search-bar button {
+  border: 0;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-left:10px;
+}
 
   </style>
 </head>
@@ -761,19 +803,40 @@ nav  img{
   <section id="home">
     <!--navigation------------------------->
     <nav>
+      
       <!--logo-->
       <a href="#home"><img src="images/logo.jpg"></a>
       <!--menu-->
+      <div class="container">
+    
+    <form action="https://www.google.com/search" method="get"  class="search-bar" traget="_blank">
+      <input type="text"  placeholder="Rechercher" name="q">
+        <button type="submit"><i class="fas fa-search"></i></button>
+        
+    </form>
+
+</div>
+
       <ul>
-        <li><a href="#home" class="active">Acceuil</a></li>
-        <li><a href="#sobre">Organization</a></li>
-        <li><a href="#projetos">Articles</a></li>
-        <li><a href="#contato">Contact</a></li>
-        <li><a href="#redes">Réseaux sociaux</a></li>
+        <li><a href="#home" class="active">@lang('public.Acceuil')</a></li>
+        <li><a href="#sobre">@lang('public.Organization')</a></li>
+        <li><a href="#projetos">@lang('public.Articles')</a></li>
+        <li><a href="#contato">@lang('public.Contact')</a></li>
       </ul>
       <!--bars--------------->
       <div class="toggle"></div>
-
+   
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+    Language 
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+    <a href="locale/en" class="dropdown-item" type="button">English<i><img src="images/eng.webp" style="height: 30px;width: 30px;margin-left: 9px;font-size: 14px"></i></a>
+    <a href="locale/fr" class="dropdown-item" type="button">Français<i><img src="images/fr.webp" style="height:30px;width: 30px "></i> </a>
+    <a href="locale/ar" class="dropdown-item" type="button">Arabe<i><img src="images/tun.png" style="height: 30px;width: 30px;margin-left: 20px"></i> </a>
+    
+  </div>
+</div>
     </nav>
     <div class="clearfix"></div>
   </section>
@@ -781,9 +844,9 @@ nav  img{
   <!--text----------------------->
 
   <div class="text-container" style="margin-reight:5px">
-    <p>Organization</p>
-    <p>We Change</p>
-    <p style="color:black;size:30px">“Ne cherchez pas la nature <br>de l’Esprit,<br> mais plutôt l’esprit de la Nature.”</p>
+    <p>@lang('public.Organization')</p>
+    <p>@lang('public.We Change')</p>
+    <p style="color:black;size:30px">@lang('public.Ne cherchez pas la nature')<br>@lang('public.de l"Esprit,')<br>@lang('public.mais plutôt l"esprit de la Nature,')</p>
    
   </div>
 
@@ -796,14 +859,10 @@ nav  img{
 
     <!--about-me-text-->
     <div class="about-text">
-      <p>Organization</p>
+      <p>@lang('public.Organization')</p><br>
       <p></p>
-      <p style="font-family: Times New Roman">Association non gouvernementale
-à but non lucratif, à pour objectif renforcer la citoyenneté et développement
-au Nord-Est West (Siliana, Béja, Kef
-et Jandouba)</p>
-      <!--       <a href="#">Contact Me</a> -->
- 
+      <p style="font-family: Times New Roman">@lang('public.Association') @lang('public.non gouvernementale à but non lucratif,') @lang('public.merci')</p>
+
     </div>
   </div>
 
@@ -843,7 +902,7 @@ et Jandouba)</p>
 
   <!--if you have any project in your mind contact me-->
   <div id="contato" class="contact-me">
-    <p>Si vous souhaitez parler d'un projet, contactez-nous..</p>
+    <p>Si vous souhaitez parler d'un projet, contactez-nous..</p><br>
     <div id="contact"><a href="{{route('contact')}}">E-mail</a></div>
   </div>
 
@@ -852,7 +911,7 @@ et Jandouba)</p>
   <!--footer--------------->
   <footer id="redes">
     <!--heading-->
-    <p>WE CHANGE</p>
+    <p>WE CHANGE</p><br>
     <!--paragraph-->
     <p>Contactez-nous à</p>
     <!--social-->

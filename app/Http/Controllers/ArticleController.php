@@ -25,7 +25,13 @@ class ArticleController extends Controller
         return view('AllArticle', compact('aa','img'));
     }
 
+    public function searchArticlePost()
+    {
+        $articles=\App\Models\Article::with('titre')->get();
 
+        return view('welcome',compact('articles'));
+    }
+    
     public function addArticle(){
         $art=\App\Models\User::all();
        
@@ -55,8 +61,7 @@ class ArticleController extends Controller
         $image->save(); 
         $article->save();
     return redirect()->route('addArticle')->with('success', 'Article créer avec succèss');
-
-    }
+                    }
 
     public function editArticle($id)
     {

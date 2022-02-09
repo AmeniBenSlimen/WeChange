@@ -47,3 +47,8 @@ Route::get('/contact', '\App\Http\Controllers\ContactController@contact')->name(
 //Ajouter le contact a la base de donnéé
 Route::post('/contactBD', '\App\Http\Controllers\ContactController@contactBD')->name('contactBD');
 
+Route::Post('/searchArticlePost', 'App\Http\Controllers\ArticleController@searchArticlePost')
+		->name('searchArticlePost');
+
+//Route localization
+Route::get('locale/{lange}','\App\Http\Controllers\LocalizationController@setLang')->name('setLang');
