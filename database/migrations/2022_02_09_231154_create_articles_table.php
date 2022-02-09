@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTableAllbum extends Migration
+class CreateArticlesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateTableAllbum extends Migration
      */
     public function up()
     {
-        Schema::create('allbum', function (Blueprint $table) {
+        Schema::create('articles', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('article_id')->constrained()->onDelete('cascade');
-            $table->foreignId('image_id')->constrained()->onDelete('cascade');
+            $table->string('titre');
+            $table->string('description');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateTableAllbum extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('table_allbum');
+        Schema::dropIfExists('articles');
     }
 }

@@ -828,7 +828,7 @@ nav  img{
    
 <div class="dropdown">
   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
-    Language 
+    @lang('public.Language') 
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
     <a href="locale/en" class="dropdown-item" type="button">English<i><img src="images/eng.webp" style="height: 30px;width: 30px;margin-left: 9px;font-size: 14px"></i></a>
@@ -861,7 +861,10 @@ nav  img{
     <div class="about-text">
       <p>@lang('public.Organization')</p><br>
       <p></p>
-      <p style="font-family: Times New Roman">@lang('public.Association') @lang('public.non gouvernementale à but non lucratif,') @lang('public.merci')</p>
+      <p style="font-family: Times New Roman">@lang('public.Association non gouvernementale
+	à but non lucratif, à pour objectif renforcer la citoyenneté et développement
+	au Nord-Est West (Siliana, Béja, Kef
+	et Jandouba)')</p>
 
     </div>
   </div>
@@ -902,8 +905,8 @@ nav  img{
 
   <!--if you have any project in your mind contact me-->
   <div id="contato" class="contact-me">
-    <p>Si vous souhaitez parler d'un projet, contactez-nous..</p><br>
-    <div id="contact"><a href="{{route('contact')}}">E-mail</a></div>
+    <p>@lang('public.Si vous souhaitez parler d"un projet, contactez-nous..')</p><br>
+    <div id="contact"><a href="{{route('contact')}}">@lang('public.E-mail')</a></div>
   </div>
 
   
@@ -911,9 +914,9 @@ nav  img{
   <!--footer--------------->
   <footer id="redes">
     <!--heading-->
-    <p>WE CHANGE</p><br>
+    <p>@lang('public.We Change')</p><br>
     <!--paragraph-->
-    <p>Contactez-nous à</p>
+    <p>@lang('public.Contactez-nous à')</p>
     <!--social-->
     <div class="social-icons">
       <a target="blanck" class="linkedin" href="https://br.linkedin.com/in/wechange03"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
@@ -925,15 +928,15 @@ nav  img{
 
     <div class="social-icons2">
 
-      <a href="#home">Acceuil</a>
-      <a href="#sobre">Organization</a>
-      <a href="#projetos">Articles</a>
-      <a href="#contato">Contact</a>
-      <a href="#redes">Réseaux sociaux</a>
+      <a href="#home">@lang('public.Acceuil')</a>
+      <a href="#sobre">@lang('public.Organization')</a>
+      <a href="#projetos">@lang('public.Articles')</a>
+      <a href="#contato">@lang('public.Contact')</a>
+    
 
     </div>
     <!--copyright-->
-    <p class="copyright">Copyright 2022 We Change</p>
+    <p class="copyright">@lang('public.Copyright 2022 We Change')</p>
   </footer>
   <!--social-attach-bar-->
   <div class="social">

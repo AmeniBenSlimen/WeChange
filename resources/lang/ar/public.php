@@ -11,7 +11,18 @@ return[
 	'mais plutôt l"esprit de la Nature,'=>'روح الطبيعة,',
 	'We Change'=>'نحن نغير',
 	'Association'=>'منطمة',
-	'non gouvernementale à but non lucratif,'=>'غير حكومية وغير ربحية ،'
-	'merci'=>'شكرا'
+	'Association non gouvernementale
+	à but non lucratif, à pour objectif renforcer la citoyenneté et développement
+	au Nord-Est West (Siliana, Béja, Kef
+	et Jandouba)'=>'جمعية غير حكومية
+	غير هادفة للربح ، بهدف تعزيز المواطنة والتنمية
+	في الشمال الشرقي الغربي (سليانة ، باجة ، الكاف
+	وجندوبة)',
+	'Si vous souhaitez parler d"un projet, contactez-nous..'=>'إذا كنت تريد التحدث عن مشروع ما ، فاتصل بنا.',
+	'E-mail'=>'بريد الالكتروني',
+	'Contactez-nous à'=>'تواصل معنا على',
+	'Copyright 2022 We Change'=>'حقوق الطبع والنشر 2022 نحن نتغير',
+	'Language'=>'لغة'
+
 ];
 ?>
