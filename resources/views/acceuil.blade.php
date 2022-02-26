@@ -1,27 +1,232 @@
 <html>
-
-<head>
-  <meta charset="utf-8">
+    <head>
+    <meta charset="utf-8">
   <title>We Change Website</title>
  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
-  <style>
-    @charset "utf-8";
-
-@import url
-(
-  "https://fonts.googleapis.com/css2? family = Poppins: ital, wght @ 0,100; 0,200; 0,300; 0,400; 0,500; 0,600; 0,700; 0,800; 0,900; 1,100; 1,200; 1.300; 1.400; 1.500; 1.600; 1.700; 1.800; 1.900 & display = trocar "
-);
-
-body {
-  background-color: #f6f5f5;
-  font-family: "poppins", sans-serif;
-  margin: 0px;
-  padding: 0px;
+        <style>
+            
+:root {
+  --nav-shad: rgba(0, 0, 0, 0.6);
+  --btn-color: #ff2291;
 }
 
+* {
+  box-sizing: border-box;
+}
+body {
+  height: 50vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+label {
+  display: none;
+  cursor: pointer;
+}
+.im.im-code {
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-size: 30px;
+  margin-left: 30px;
+  cursor: pointer;
+}
+
+.im.im-code:hover {
+  color: var(--btn-color);
+}
+
+#checkbox {
+  display: none;
+}
+
+.menu {
+  list-style: none;
+  margin-left: auto;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-family: poppins;
+}
+
+nav ul li a:hover {
+  border-bottom: solid var(--btn-color);
+  padding: 1px 0;
+  animation: border-animation 1s infinite ease-in-out;
+  animation-direction: alternate-reverse;
+}
+
+@keyframes border-animation {
+  0% 100% {
+    border-width: 2px;
+  }
+}
+
+.header {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  z-index: 2;
+}
+
+.header h1 {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 20px 40px;
+  border-radius: 10px;
+}
+
+.header p {
+  font-size: 15px;
+  font-family: poppins;
+  color: white;
+  text-align: center;
+  width: 45%;
+}
+
+.header button {
+  background-color: var(--btn-color);
+  border: unset;
+  width: 15%;
+  height: 30px;
+  border-radius: 5px;
+  box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+
+.header button:active {
+  transform: scale(1.1);
+}
+
+.slider {
+  overflow: hidden;
+  position: relative;
+}
+.slider figure {
+  position: relative;
+  height: 100%;
+  width: 500%;
+  margin: 0;
+  left: 0;
+  animation: slider 10s infinite ease-in-out;
+}
+
+.slider figure img {
+  width: 20%;
+  float: left;
+  height: 90vh;
+  background-size: cover;
+  background-position: center;
+}
+
+@keyframes slider {
+  0% {
+    left: 0;
+  }
+
+  20% {
+    left: 0;
+  }
+
+  25% {
+    left: -100%;
+  }
+
+  45% {
+    left: -100%;
+  }
+
+  50% {
+    left: -200%;
+  }
+  70% {
+    left: -200%;
+  }
+
+  75% {
+    left: -300%;
+  }
+
+  90% {
+    left: -300%;
+  }
+
+  100% {
+    left: -400%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .menu {
+    display: none;
+  }
+  #menuicon {
+    display: block;
+    color: white;
+    margin-left: auto;
+    margin-right: 30px;
+  }
+  #menuicon:hover {
+    color: var(--btn-color);
+  }
+
+  #checkbox:checked + .menu {
+    height: 60px;
+    width: 100%;
+    position: absolute;
+    margin: auto;
+    padding: 0;
+    top: 60px;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    column-gap: 20px;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--nav-shad);
+  }
+
+  .menu li {
+    margin: 0;
+    padding: 0;
+  }
+
+  .menu li a {
+    font-size: 14px;
+  }
+
+  .header h1 {
+    font-size: 35px;
+    padding: 6px 12px;
+  }
+  .header p {
+    font-size: 12px;
+    text-align: left;
+    width: 56%;
+  }
+  .header button {
+    width: 34%;
+    margin-top: 10px;
+  }
+}
 ul {
   list-style: none;
 }
@@ -30,16 +235,7 @@ a {
   text-decoration: none;
 }
 
-section {
-  width: 100%;
-  height: 95vh;
-  background-image: url("images/img11.jpg");
-  background-size: 100% 100%; 
-  /*   background-color: #000000; */
-  
-  background-repeat: no-repeat;
-  position: relative;
-}
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -69,73 +265,31 @@ nav ul li a {
   font-size: 22px;
   font-weight: 1000;
 }
-.active {
-  color: #2d2a2a;
-  font-weight: bold;
+nav  img{
+  height: 90px;
+    width: 150px;
+    border-radius: 50%;
 }
 
-.clearfix {
-  clear: both;
-}
-
-.text-container p:nth-child(1) {
-  font-family: calibri;
-  font-weight: bold;
-  color: #6d6d6d;
-  font-size: 22px;
-}
-.text-container p:nth-child(2) {
-  font-family: calibri;
-  font-weight: bold;
-  letter-spacing: 1px;
-  color: #1a1a1a;
-  font-size: 60px;
-}
-.text-container p:nth-child(3) {
-  font-family: myriad pro regular;
-  color: #403e3e;
-  font-size: 30px;
-  line-height: 30px;
-}
-
-.text-container p {
-  margin: 45px 0px 25px;
-  width:100%;
-  line-height: 0px;
-
-  
-}
-.text-container button {
-  width: 130px;
-  height: 42px;
-  border-radius: 10px;
-  font-family: calibri;
-  font-weight: bold;
-  font-size: 14px;
-  outline: none;
-  margin: 0px 10px;
-}
-.text-container {
-  position: absolute;
-  left: 13%;
-  top: 42%;
-  transform: translate(-13%, -42%);
- 
-}
-.hire-btn {
-  border: 2px solid #373636;
-  color: #373636;
-  background-color: transparent;
-}
-.down-cv {
-  background-color: #0b0b0b;
-  color: #fff;
+#contact {
+  -webkit-user-select: none; /* Chrome/Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
+  width: 200px;
+  height: 40px;
+  background-color: #ffffff;
+  color: #000000;
   border: none;
+  outline: none;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px;
+  box-shadow: 2px 2px 15px rgba(255, 255, 255, 0.4);
+  cursor: pointer;
 }
-button:active {
-  transform: scale(1.1);
-}
-
 .about-container {
   width: 80%;
   height: 330px;
@@ -468,7 +622,6 @@ textarea {
 .formBtn:hover {
   color: #7e7d7d;
 }
-
 footer p {
   font-family: calibri;
 }
@@ -759,15 +912,8 @@ nav  img{
   margin: 0;
   padding: 0%;
 }
-.container {
-  height: 40%;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 .search-bar {
-  width: 100%;
+  width: 90%;
   max-width: 400px;
   display: flex;
   align-items: center;
@@ -782,7 +928,8 @@ nav  img{
   border-radius: 12px;
   padding: 5p;
   font-size: 20px;
-
+  max-width: 150px;
+ height:40px;
 }
 ::placeholder {
   color: gray;
@@ -796,11 +943,11 @@ nav  img{
   margin-left:10px;
 }
 
-  </style>
-</head>
+        </style>
+    </head>
+    <body>
 
-<body>
-  <section id="home">
+    <section id="home">
     <!--navigation------------------------->
     <nav>
       
@@ -819,7 +966,7 @@ nav  img{
 
       <ul>
         <li><a href="#home" class="active">@lang('public.Acceuil')</a></li>
-        <li><a href="#sobre">@lang('public.Organization')</a></li>
+        <li><a href="{{route('organization')}}">@lang('public.Organization')</a></li>
         <li><a href="#projetos">@lang('public.Articles')</a></li>
         <li><a href="#contato">@lang('public.Contact')</a></li>
         
@@ -841,34 +988,22 @@ nav  img{
     </nav>
     <div class="clearfix"></div>
   </section>
-
-  <!--text----------------------->
-
-  <div class="text-container" style="margin-reight:5px">
-    <p>@lang('public.Organization')</p>
-    <p>@lang('public.We Change')</p>
-    <p style="color:black;size:30px">@lang('public.Ne cherchez pas la nature')<br>@lang('public.de l"Esprit,')<br>@lang('public.mais plutôt l"esprit de la Nature,')</p>
-   
+  <div class="header">
+    <h1>@lang('public.Organization')
+    @lang('public.We Change')</h1>
+    <p>@lang('public.Ne cherchez pas la nature') @lang('public.de l"Esprit,') @lang('public.mais plutôt l"esprit de la Nature,')</p>
+    <button onclick="location.href='{{route('organization')}}';">Voir plus</button>
   </div>
-
-  <!--model---------------------->
-  
-
-  <div id="sobre" class="about-container">
-    <!--img-->
-    <img src="images/logo.jpg" />
-
-    <!--about-me-text-->
-    <div class="about-text">
-      <p>@lang('public.Organization')</p><br>
-      <p></p>
-      <p style="font-family: Times New Roman">@lang('public.Association non gouvernementale
-	à but non lucratif, à pour objectif renforcer la citoyenneté et développement
-	au Nord-Est West (Siliana, Béja, Kef
-	et Jandouba)')</p>
-
-    </div>
-  </div>
+  <div class="slider">
+    <figure>
+      <img id="image" src="images/db.jpg" alt="">
+      <img src="images/img5.jpg" alt="">
+      <img src="images/img7.jpg" alt="">
+      <img src="images/img11.jpg" alt="">
+      <img src="images/img14.jpg" alt="">
+    </figure>
+<br>
+    <br>
 
   <!--services-container---------------------------->
   <div id="projetos" class="services ">
@@ -878,8 +1013,7 @@ nav  img{
       <br><br>
     </div>
    
-
-<div class="box-container">
+    <div class="box-container">
       <!--1------------->
       @foreach($aa as $a)
       
@@ -896,28 +1030,20 @@ nav  img{
       <!--3------------->
       
       <br><br>
-    
+    <span>
+      {{$aa->links()}}
+    </span>
       <!--2------------->
      
       <!--3------------->
      
     </div>
-    <!--  -->
-      <!--2------------->
-     
-      <!--3------------->
-     
-    </div>
+  </div>
 
-  <!--if you have any project in your mind contact me-->
-  <div id="contato" class="contact-me">
+    <div id="contato" class="contact-me">
     <p>@lang('public.Si vous souhaitez parler d"un projet, contactez-nous..')</p><br>
     <div id="contact"><a href="{{route('contact')}}">@lang('public.E-mail')</a></div>
   </div>
-
-  
-
-  <!--footer--------------->
   <footer id="redes">
     <!--heading-->
     <p>@lang('public.We Change')</p><br>
@@ -953,33 +1079,5 @@ nav  img{
     
     
   </div>
-
-</body>
-<script>
-  $(document).ready(function () {
-  $(".toggle").click(function () {
-    $(".toggle").toggleClass("active");
-    $("nav").toggleClass("active");
-  });
-});
-
-$(function () {
-  // contact form animations
-  $("#contact").click(function () {
-    $("#contactForm").fadeToggle();
-  });
-  $(document).mouseup(function (e) {
-    var container = $("#contactForm");
-
-    if (
-      !container.is(e.target) && // if the target of the click isn't the container...
-      container.has(e.target).length === 0
-    ) {
-      // ... nor a descendant of the container
-      container.fadeOut();
-    }
-  });
-});
-
-</script>
+    </body>
 </html>

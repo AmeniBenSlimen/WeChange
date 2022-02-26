@@ -22,7 +22,8 @@ return[
 	'E-mail'=>'بريد الالكتروني',
 	'Contactez-nous à'=>'تواصل معنا على',
 	'Copyright 2022 We Change'=>'حقوق الطبع والنشر 2022 نحن نتغير',
-	'Language'=>'لغة'
-
+	'Language'=>'لغة',
+	'Rechercher'=>'بحث',
+	'équipe'=>'فريق'
 ];
 ?>

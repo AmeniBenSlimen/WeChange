@@ -4,71 +4,51 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Article;
 use App\Models\Image;
+use App\Models\Allbum;
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
 {
 
-   
+  
 
+     public function getAllArt(){
 
-    public function getAllArticle1(){
-        $aa = Article :: all();
-        $img= Image :: all();
-       
-        return view('welcome', compact('aa','img'));
-    }
-   
+        $aa = Article :: orderBy('id','desc');
+        return view('welcome', compact('aa'));
+    } 
+
+  
     public function getAllArticle(){
-        $aa = Article :: all();
-        $img= Image :: all();
-        return view('AllArticle', compact('aa','img'));
+        $aa = Article :: orderBy('id','desc');
+        return view('AllArticle', compact('aa'));
     }
 
-    public function searchArticlePost()
-    {
-        $articles=\App\Models\Article::with('titre')->get();
-
-        return view('welcome',compact('articles'));
-    }
-    
+   
     public function addArticle(){
         $art=\App\Models\User::all();
        
         return view('article',compact('art'));
     }
-
+    
     public function addArticleBD(Request $request){
-        $article=new Article();
-        $article->titre=$request->titre;
-        $article->description=$request->description;
-        $article->user_id=$request->user_id;
-        $image=new Image();
-        $image->URL=$request->URL;
-
-                    if($request->hasfile("URL")){
-                        $files=$request->file("URL");
-                        foreach($files as $file){
-                            $imageName=time().'_'.$file->getClientOriginalName();
-                            $request['article_id']=$article_id;
-                            $request['URL']=$imageName;
-                            $file->move('imges/', $imageName);
-                            Images::create($request->all());
-                        }
-            
-                     }  
-
-        $image->save(); 
-        $article->save();
-    return redirect()->route('addArticle')->with('success', 'Article créer avec succèss');
-                    }
+            $path=$request->file('URL')->store('public/images');
+            $article = new Article();
+            $article->titre=$request->titre;
+            $article->description=$request->description;
+            $article->URL=$path;
+            $article->save();
+        
+            return redirect()->route('addArticle')->with('SuccessMessage','Article ajouté avec succès.');
+        }
+    
 
     public function editArticle($id)
     {
-        $aa=\App\Models\User::all();
+        //$aa=\App\Models\User::all();
         $article=\App\Models\Article::where('id',$id)->first();
 
-        return view('modifierArticle',compact('article','aa'));
+        return view('modifierArticle',compact('article'));
     }
 
     public function editArticleBD(Request $request)

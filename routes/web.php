@@ -12,8 +12,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/','\App\Http\Controllers\ArticleController@getAllArticle1')->name('welcome');
-
+Route::get('/','\App\Http\Controllers\ArticleController@getAllArt')->name('welcome');
+//Route::get('/organization','\App\Http\Controllers\ArticleController@organization')->name('organization');
 
 Auth::routes();
 
@@ -52,3 +52,4 @@ Route::Post('/searchArticlePost', 'App\Http\Controllers\ArticleController@search
 
 //Route localization
 Route::get('locale/{lange}','\App\Http\Controllers\LocalizationController@setLang')->name('setLang');
+

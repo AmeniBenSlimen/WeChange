@@ -22,6 +22,8 @@ return[
 	'E-mail'=>'E-mail',
 	'Contactez-nous à'=>'Contactez-nous à',
 	'Copyright 2022 We Change'=>'Copyright 2022 We Change',
-	'Language'=>'Langue'
+	'Language'=>'Langue',
+	'Rechercher'=>'Rechercher',
+	'équipe'=>'équipe'
 ];
 ?>

@@ -34,13 +34,14 @@
 
     <tbody>
         @foreach($aa as $a)
-        @foreach($img as $im)
+      
         <tr>
             <td>{{$a->id}}</td>
             <td>{{$a->titre}}</td>
             <td>{{$a->description}}</td>
+            <td>{{$a->URL}}</td>
             
-            <td><img src="images/{{$im->URL}}" class="img-responsive" style="max-height:100px;max-width:100px"> </td>
+           
             
             
            
@@ -54,7 +55,7 @@
         
         </tr>
         @endforeach
-        @endforeach
+
     </tbody>
   </table>
   

@@ -1,5 +1,9 @@
 <!-- create.blade.php -->
-
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+ 
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/min/dropzone.min.css" rel="stylesheet">
+  
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.2.0/min/dropzone.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 @extends('layouts.app')
 @section('content')
@@ -123,7 +127,7 @@ p {
               <li>{{ $error }}</li>
             @endforeach
         </ul>
-      </div><br />
+      </div><br/>
     @endif
 
       <form method="post" action="{{route('addArticleBD')}}">
@@ -145,23 +149,10 @@ p {
                      </div>
                      
 </div>
-                     <div class="form-group">
-                          <label>Admin :</label>
-                          <select name="user_id" class="form-control">
-                                        <option value="">Aucune</option>
-                                        @foreach ($art as $ar)
-                                            @if($ar->user_id==$ar->id)
-                                            <option value="{{$ar->id}}" selected>{{$ar->name}}</option>
-                                            @else
-                                            <option value="{{$ar->id}}" >{{$ar->name}}</option>
-                                            @endif
-                                        @endforeach
-                                    </select>
-
-                      </div>
+                    
                       
 
-          </div>
+         </div>
           <br/>
          <center> 
            <button type="submit" class="btn btn-primary">Créer</button>
@@ -172,65 +163,4 @@ p {
   </div>
 </div>
 @endsection
-<script>
-  jQuery(document).ready(function () {
-  ImgUpload();
-});
 
-function ImgUpload() {
-  var imgWrap = "";
-  var imgArray = [];
-
-  $('.upload__inputfile').each(function () {
-    $(this).on('change', function (e) {
-      imgWrap = $(this).closest('.upload__box').find('.upload__img-wrap');
-      var maxLength = $(this).attr('data-max_length');
-
-      var files = e.target.files;
-      var filesArr = Array.prototype.slice.call(files);
-      var iterator = 0;
-      filesArr.forEach(function (f, index) {
-
-        if (!f.type.match('image.*')) {
-          return;
-        }
-
-        if (imgArray.length > maxLength) {
-          return false
-        } else {
-          var len = 0;
-          for (var i = 0; i < imgArray.length; i++) {
-            if (imgArray[i] !== undefined) {
-              len++;
-            }
-          }
-          if (len > maxLength) {
-            return false;
-          } else {
-            imgArray.push(f);
-
-            var reader = new FileReader();
-            reader.onload = function (e) {
-              var html = "<div class='upload__img-box'><div style='background-image: url(" + e.target.result + ")' data-number='" + $(".upload__img-close").length + "' data-file='" + f.name + "' class='img-bg'><div class='upload__img-close'></div></div></div>";
-              imgWrap.append(html);
-              iterator++;
-            }
-            reader.readAsDataURL(f);
-          }
-        }
-      });
-    });
-  });
-
-  $('body').on('click', ".upload__img-close", function (e) {
-    var file = $(this).parent().data("file");
-    for (var i = 0; i < imgArray.length; i++) {
-      if (imgArray[i].name === file) {
-        imgArray.splice(i, 1);
-        break;
-      }
-    }
-    $(this).parent().parent().remove();
-  });
-}
-</script>

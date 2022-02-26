@@ -8,8 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Image extends Model
 {
     use HasFactory;
-    protected $fillable=['URL'];
-
-    /* public function setfilenamesattribute($value){
-        $this->attributes['URL']=json_encode($value); */
-    }
+    protected $table = 'images';
+    protected $fillable = [ 
+   'url', 'article_id' 
+  ];
+public  function article() 
+{ 
+  return $this ->belongsTo('App\Article', 'article_id'); 
+}
+}

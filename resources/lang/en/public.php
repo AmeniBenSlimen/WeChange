@@ -22,7 +22,9 @@ return[
 	'E-mail'=>'E-mail',
 	'Contactez-nous à'=>'Contact us at',
 	'Copyright 2022 We Change'=>'Copyright 2022 We Change',
-	'Language'=>'Language'
+	'Language'=>'Language',
+	'Rechercher'=>'Search',
+	'équipe'=>'Team'
 	
 ];
 ?>
