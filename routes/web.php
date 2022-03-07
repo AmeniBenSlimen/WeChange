@@ -12,7 +12,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/','\App\Http\Controllers\ArticleController@getAllArt')->name('welcome');
+
+
+
+
+
 //Route::get('/organization','\App\Http\Controllers\ArticleController@organization')->name('organization');
 
 Auth::routes();
@@ -53,3 +57,25 @@ Route::Post('/searchArticlePost', 'App\Http\Controllers\ArticleController@search
 //Route localization
 Route::get('locale/{lange}','\App\Http\Controllers\LocalizationController@setLang')->name('setLang');
 
+
+//Equipe
+Route::get('/equipe','\App\Http\Controllers\EquipeController@interface')->name('equipe');
+
+//afficher le formulaire d'ajouter membre
+Route::get('/addMembre', '\App\Http\Controllers\EquipeController@addMembre')
+		->name('addMembre');
+
+//ajouter membre au  iveau de base de donnéés
+Route::Post('/membreBD', '\App\Http\Controllers\EquipeController@MembreBD')
+		->name('MembreBD');
+
+Route::post('/AddAllbumBD','\App\Http\Controllers\ArticleController@AddAllbumBD')->name('AddAllbumBD');
+
+Route::post('/AddImagesBD','\App\Http\Controllers\ArticleController@AddImagesBD')->name('AddImagesBD');
+
+Route::get('/Allmembre','\App\Http\Controllers\EquipeController@Allmembre')->name('Allmembre');
+
+
+
+Route::get('/editMembre/{id}', '\App\Http\Controllers\EquipeController@editMembre')->name('editMembre');
+Route::Post('/editMembreBD', '\App\Http\Controllers\EquipeController@editMembreBD')->name('editMembreBD');

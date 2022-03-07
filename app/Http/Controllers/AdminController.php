@@ -9,4 +9,7 @@ class AdminController extends Controller
     public function updateProfile(){
         
     }
+    public function panel(){
+        return view('panel');
+    }
 }

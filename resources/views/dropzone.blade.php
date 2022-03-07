@@ -145,32 +145,17 @@ p {
       </div><br/>
     @endif
 
-      <form method="post" action="{{route('addArticleBD')}}">
+    <form method="post" action="{{route('AddImagesBD')}}" enctype="multipart/form-data">
       @csrf
-      <input type="hidden" value="{{Auth::user()->id}}" name="user">
-          <div class="form-group">
-              <label for="titre">Titre de l'article :</label>
-              <input  type="text" class="form-control" name="titre" required/>
-          </div>
-
-          <div class="form-group">
-              <label for="description">Description :</label>
-              <textarea type="text" class="form-control" name="description" required></textarea>
-          </div>
-          <div class="form-group">
-                          <label for="category">Catégorie </label>
-                          <select name="category" class="form-control">
-                                            <option value="">Choisissez un Catégorie</option>
-                                            <option value="Evénnement">Evénnement</option>
-                                            <option value="Nouveauté" >Nouveauté</option>
-                                            
-                          </select>
-
-                      </div>
-         
+      <input type="hidden" value="{{$allbum->id}}" name="allbum">
+      <div class="form-group">
+                        <label>Photo :</label>
+                        <input type="file"  name="url[]" class="form-control" 
+                            placeholder="Choisissez une photo" multiple>
+                     </div>
           <br/>
          <center> 
-           <button type="submit" class="button button2">Suivant</button>
+           <button type="submit" class="button button2">Términer</button>
                   
         </center>
       </form>

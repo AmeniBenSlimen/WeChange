@@ -3,11 +3,11 @@
  
  <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/min/dropzone.min.css" rel="stylesheet">
   
- <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.2.0/min/dropzone.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 @extends('layouts.app')
 @section('content')
 <style>
+  
   .uper {
     margin-top: 40px;
   }
@@ -105,33 +105,32 @@ p {
   position: relative;
   padding-bottom: 100%;
 }
-.button {
-  background-color: #04AA6D;
-  border: none;
-  color: white;
-  padding: 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-}
-
-
-.button2 {border-radius: 4px;}
-
 </style>
 
 
 <div class="carduper">
-@if(session()->get('success'))
-    <div class="alert alert-success">
-      {{ session()->get('success') }}  
-    </div><br />
-  @endif
+@if(Session::has('SuccessMessage'))
+
+<div class="row">
+   <div class="alert alert-success text-center" role="alert">
+        <strong></strong> {{Session::get('SuccessMessage')}}
+   </div>
+</div>
+
+@endif
+
+@if(Session::has('ErrorMessage'))
+
+<div class="row">
+    <div class="alert alert-danger text-center">
+        <strong></strong> {{Session::get('ErrorMessage')}}
+    </div>
+</div>
+
+@endif
   <div class="card-header">
     
-    Créer un Article
+    Créer un Membre
   </div>
 
   <div class="card-body">
@@ -145,32 +144,48 @@ p {
       </div><br/>
     @endif
 
-      <form method="post" action="{{route('addArticleBD')}}">
+      <form method="post" action="{{route('MembreBD')}}">
       @csrf
       <input type="hidden" value="{{Auth::user()->id}}" name="user">
+                                @if(session()->get('success'))
+                    <div class="alert alert-success">
+                    {{ session()->get('success') }}  
+                    </div><br />
+                @endif
           <div class="form-group">
-              <label for="titre">Titre de l'article :</label>
-              <input  type="text" class="form-control" name="titre" required/>
+              <label for="titre">Nom membre :</label>
+              <input type="text" class="form-control" name="nom_membre" required/>
           </div>
 
+          <div class="form-group">
+              <label for="description">Prénom membre :</label>
+              <textarea type="text" class="form-control" name="prenom_membre" required></textarea>
+          </div>
+          <div class="form-group">
+              <label for="specialite">Spécialité :</label>
+              <textarea type="text" class="form-control" name="specialite" required></textarea>
+          </div>
           <div class="form-group">
               <label for="description">Description :</label>
-              <textarea type="text" class="form-control" name="description" required></textarea>
-          </div>
-          <div class="form-group">
-                          <label for="category">Catégorie </label>
-                          <select name="category" class="form-control">
-                                            <option value="">Choisissez un Catégorie</option>
-                                            <option value="Evénnement">Evénnement</option>
-                                            <option value="Nouveauté" >Nouveauté</option>
-                                            
-                          </select>
+              <textarea type="text" class="form-control" name="description_membre" required></textarea>
+</div>
 
-                      </div>
-         
+<div class="form-group">
+                        <label>Photo :</label>
+                        <input type="file"  name="image" class="form-control" 
+                            placeholder="Choisissez une photo">
+                     </div>
+                     <div class="form-group">
+              <label for="contact">Contact :</label>
+              <textarea type="text" class="form-control" name="contact" required></textarea>
+</div>
+                    
+                      
+
+         </div>
           <br/>
          <center> 
-           <button type="submit" class="button button2">Suivant</button>
+           <button type="submit" class="btn btn-primary">Créer</button>
                   
         </center>
       </form>

@@ -2,10 +2,10 @@
 <html>
 <head>
     <title>Contacter nous</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
     <style>
         ul {
   list-style: none;
@@ -61,12 +61,24 @@ nav ul li a {
       <a href="{{route('welcome')}}"><img src="images/logo.jpg"></a>
       <!--menu-->
       <ul>
-        <li><a href="{{route('welcome')}}" class="active">Acceuil</a></li>
-        <li><a href="{{route('welcome')}}">Organization</a></li>
-        <li><a href="{{route('welcome')}}">Articles</a></li>
-        <li><a href="{{route('welcome')}}">Contact</a></li>
-        <li><a href="{{route('welcome')}}">Réseaux sociaux</a></li>
+        <li><a href="#home" class="active">@lang('public.Acceuil')</a></li>
+        <li><a href="#sobre">@lang('public.Organization')</a></li>
+        <li><a href="#projetos">@lang('public.Articles')</a></li>
+        <li><a href="{{route('equipe')}}">@lang('public.Equipe')</a></li>
+        <li><a href="#contato">@lang('public.Contact')</a></li>
+        
       </ul>
+      <div class="dropdown" style="margin-reight:20px">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+    @lang('public.Language') 
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+    <a href="locale/en" class="dropdown-item" type="button">English<i><img src="images/eng.webp" style="height: 30px;width: 30px;margin-left: 9px;font-size: 14px"></i></a>
+    <a href="locale/fr" class="dropdown-item" type="button">Français<i><img src="images/fr.webp" style="height:30px;width: 30px "></i> </a>
+    <a href="locale/ar" class="dropdown-item" type="button">Arabe<i><img src="images/tun.png" style="height: 30px;width: 30px;margin-left: 20px"></i> </a>
+    
+  </div>
+</div>
       <!--bars--------------->
       <div class="toggle"></div>
 
@@ -145,7 +157,7 @@ nav ul li a {
                                     </div>  
                                 </div>
                             </div>
-                   
+                   <br>
                             <div class="form-group text-center">
                                 <button class="btn btn-success btn-submit">Envoyer</button>
                             </div>

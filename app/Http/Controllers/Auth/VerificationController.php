@@ -23,7 +23,7 @@ class VerificationController extends Controller
 
     /**
      * Where to redirect users after verification.
-     *
+     *get current user id in laravel 8
      * @var string
      */
     protected $redirectTo = RouteServiceProvider::HOME;

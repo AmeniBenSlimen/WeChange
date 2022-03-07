@@ -33,7 +33,7 @@ a {
 section {
   width: 100%;
   height: 95vh;
-  background-image: url("images/img11.jpg");
+  background-image: url("images/kk.jpg");
   background-size: 100% 100%; 
   /*   background-color: #000000; */
   
@@ -809,11 +809,6 @@ nav  img{
       <!--menu-->
       <div class="container">
     
-    <form action="https://www.google.com/search" method="get"  class="search-bar" traget="_blank" style="margin-reight:60px">
-      <input type="text"  placeholder="@lang('public.Rechercher')" name="q">
-        <button type="submit"><i class="fas fa-search"></i></button>
-        
-    </form>
 
 </div>
 
@@ -821,6 +816,7 @@ nav  img{
         <li><a href="#home" class="active">@lang('public.Acceuil')</a></li>
         <li><a href="#sobre">@lang('public.Organization')</a></li>
         <li><a href="#projetos">@lang('public.Articles')</a></li>
+        <li><a href="{{route('equipe')}}">@lang('public.Equipe')</a></li>
         <li><a href="#contato">@lang('public.Contact')</a></li>
         
       </ul>
@@ -847,7 +843,7 @@ nav  img{
   <div class="text-container" style="margin-reight:5px">
     <p>@lang('public.Organization')</p>
     <p>@lang('public.We Change')</p>
-    <p style="color:black;size:30px">@lang('public.Ne cherchez pas la nature')<br>@lang('public.de l"Esprit,')<br>@lang('public.mais plutôt l"esprit de la Nature,')</p>
+    <p style="color:black;size:30px">@lang('public.Ne cherchez pas la nature')<br>@lang('public.de l\'Esprit,')<br>@lang('public.mais plutôt l\'esprit de la Nature,')</p>
    
   </div>
 
@@ -870,38 +866,57 @@ nav  img{
     </div>
   </div>
 
-  <!--services-container---------------------------->
-  <div id="projetos" class="services ">
-    <!--text-->
-    <div class="services-text ">
-      
-      <br><br>
-    </div>
-   
-
-<div class="box-container">
-      <!--1------------->
-      @foreach($aa as $a)
-      
-      <div class="box-1">
-       
-        <p class="heading">{{$a->titre}}</p>
-        <p class="details">{{$a->description}}</p>
-        <p class="heading" style="font-size:10px;margin-left:120px">{{$a->created_at}}</p>
+ 
+ 
+<div class="row">
+    <div class="col-md-4">
+      <div class="thumbnail">
+          <img src="images/1.jpg" alt="Lights" style="width:100%;height:100%">
       </div>
-
-        @endforeach  
-      <!--2------------->
-      
-      <!--3------------->
-      
-      <br><br>
-    
-      <!--2------------->
-     
-      <!--3------------->
-     
     </div>
+    <div class="col-md-4">
+      <div class="thumbnail">
+          <img src="images/2.jpg" alt="Nature" style="width:100%;height:100%">
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="thumbnail">
+          <img src="images/3.jpg" alt="Fjords" style="width:100%;height:100%">
+      </div>
+    </div>
+  </div>
+</div>
+  <br>
+<center><h5>تلمينا في "عين بوسعدية" من كامل أنحاء الجمهورية🇹🇳، من تونس لبن ڨردان، شباب يحب بلادو و يعشقها و يحبلها كان الخير و منغير حساب، طوعو بكل شي عندهم باش يساهمو في غراسة عدد من الأشجار في منطقة جبل "الكنازيز" من معتمدية برقو بولاية سليانة،  للمساهة في التنمية الغابية و زادا تكون ذخر و مورد رزق لأهالي المنطقة، رغم كل الصعوبات يصعب باش تلقى الكلام لي تنجم تشكر  بيه  الشباب هاذم وماتنجم تقلهم كان ربي يكثر منكم ♥️♥️...
+</h5></center><br>
+<div class="row">
+    <div class="col-md-4">
+      <div class="thumbnail">
+          <img src="images/4.jpg" alt="Lights" style="width:100%;height:100%">
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="thumbnail">
+          <img src="images/5.jpg" alt="Nature" style="width:100%;height:100%">
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="thumbnail">
+          <img src="images/6.jpg" alt="Fjords" style="width:100%;height:100%">
+      </div>
+    </div>
+  </div>
+</div>
+  <br>
+<center><h5>🟩 من جبال  برڨو لجبل السرج  من ولاية سليانة تم تهيئة عدد ستا مسالك بواسطة لافتات توعوية و أخرى إرشادية.
+🔴 يهم الجمعية ان يحافظ أهالي جبل برڨو و السرج على هذه اللافتات و خاصة مما تمثله من أهمية في درجة التعريف بالمنطقة و التسويق لها، وعليه تنوه جمعية "نحن نغير" أنه يجب للإستظار بالتراخيص المناسبة عند  "التخييم"  أو "الخرجات الخلوية"  بالمنطقة المذكورة.
+🔴 كما تشير في إطار تيسير العمل إلى ضرورة التواصل بين المرافقين الجبلين المكونين و الذين سيتم مد قائمة اسمية بخصوصهم و حسن تواصلهم مع حرس الغابات.
+🔴 إعتماد الإدارة على مرافقين مكونين يمكن أن يكون دافع لخلق حركية اقتصادية بالمنطقة.
+🔴 العمل على ادماج متساكني المناطق المذكورة مع الهياكل المعنية من خلال تقديم كل التسهيلات من خلال دفعهم نحو المساهمة في المحافظة على الثروات الغابية بمختلف أنواعها.
+🔴 حث الزوار على ضرورة احترام الثروة الغابية و خصوصيات المنطقة و كذلك دعمهم في احياء عاداتهم و تقاليدهم.</h5><br>
+</center>
+
+   
     <!--  -->
       <!--2------------->
      
@@ -911,7 +926,7 @@ nav  img{
 
   <!--if you have any project in your mind contact me-->
   <div id="contato" class="contact-me">
-    <p>@lang('public.Si vous souhaitez parler d"un projet, contactez-nous..')</p><br>
+    <p>@lang('public.Si vous souhaitez parler d\'un projet, contactez-nous..')</p><br>
     <div id="contact"><a href="{{route('contact')}}">@lang('public.E-mail')</a></div>
   </div>
 

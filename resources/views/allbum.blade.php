@@ -145,28 +145,18 @@ p {
       </div><br/>
     @endif
 
-      <form method="post" action="{{route('addArticleBD')}}">
+      <form method="post" action="{{route('AddAllbumBD')}}">
       @csrf
-      <input type="hidden" value="{{Auth::user()->id}}" name="user">
+      <input type="hidden" value="{{$article->id}}" name="article">
           <div class="form-group">
-              <label for="titre">Titre de l'article :</label>
-              <input  type="text" class="form-control" name="titre" required/>
+              <label for="nom">Titre de l'allbum :</label>
+              <input  type="text" class="form-control" name="nom_allbum" required/>
           </div>
 
           <div class="form-group">
-              <label for="description">Description :</label>
-              <textarea type="text" class="form-control" name="description" required></textarea>
+              <label for="description">Description de l'allbum :</label>
+              <textarea type="text" class="form-control" name="description_allbum" required></textarea>
           </div>
-          <div class="form-group">
-                          <label for="category">Catégorie </label>
-                          <select name="category" class="form-control">
-                                            <option value="">Choisissez un Catégorie</option>
-                                            <option value="Evénnement">Evénnement</option>
-                                            <option value="Nouveauté" >Nouveauté</option>
-                                            
-                          </select>
-
-                      </div>
          
           <br/>
          <center> 

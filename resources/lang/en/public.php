@@ -7,8 +7,8 @@ return[
 	'Organization'=>'Organization',
 	'We Change'=>'We Change',
 	'Ne cherchez pas la nature'=>'Do not seek nature ',
-	'de l"Esprit,'=>'but rather the spirit of,',
-	'mais plutôt l"esprit de la Nature,'=>'Nature,',
+	'de l\'Esprit,'=>'but rather the spirit of,',
+	'mais plutôt l\'esprit de la Nature,'=>'Nature,',
 	'We Change'=>'We Change',
 	'Association'=>'Association',
 	'Association non gouvernementale
@@ -24,7 +24,7 @@ return[
 	'Copyright 2022 We Change'=>'Copyright 2022 We Change',
 	'Language'=>'Language',
 	'Rechercher'=>'Search',
-	'équipe'=>'Team'
+	'Equipe'=>'Team'
 	
 ];
 ?>

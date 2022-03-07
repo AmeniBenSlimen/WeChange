@@ -59,17 +59,7 @@
     <div class="col-sm-3 col-md-6 col-lg-4">
 	<div class="sidebar">
 		<div class="sidebar-header d-flex justify-content-center align-items-center px-3 py-4">
-    <img
-         class="rounded-pill img-fluid"
-         width="65"
-         src="images/Profil.png"
-         alt="">
-    <div class="ms-2">
-      <h5 class="fs-6 mb-0">
-        <a class="text-decoration-none" href="#">Ameni Ben Slimen</a>
-      </h5>
-      <p class="mt-1 mb-0">Developpeuse web.</p>
-    </div>
+   
   </div>
 		<ul>
 			<li>
@@ -91,15 +81,15 @@
 				</a>
 			</li>
 			<li>
-				<a href="#">
-					<i class="far fa-eye"></i>
-					<div class="title">Le nombre des articles</div>
+				<a href="{{route('Allmembre')}}">
+					<i class="fa fa-check-circle"></i>
+					<div class="title" id="togg1">Voir tous les Membres</div>
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="{{route('addMembre')}}">
 					<i class="far fa-id-card"></i>
-					<div class="title">Profil</div>
+					<div class="title">Ajouter un Membre</div>
 				</a>
 			</li>
 		</ul>

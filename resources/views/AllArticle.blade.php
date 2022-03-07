@@ -25,6 +25,9 @@
           <td>ID</td>
           <td>Titre de l'article </td>
           <td>Description de l'article  </td>
+          <td>categorie  </td>
+          <td>titre de l'allbum  </td>
+          <td>Description de l'allbum  </td>
           <td>Images  </td>
           
           
@@ -34,12 +37,17 @@
 
     <tbody>
         @foreach($aa as $a)
+        @foreach($bb as $b)
+        @foreach($ii as $i)
       
         <tr>
             <td>{{$a->id}}</td>
             <td>{{$a->titre}}</td>
             <td>{{$a->description}}</td>
-            <td>{{$a->URL}}</td>
+            <td>{{$a->category}}</td>
+            <td>{{$b->nom_allbum}}</td>
+            <td>{{$b->description_allbum}}</td>
+            <td>{{$i->url}}</td>
             
            
             
@@ -54,6 +62,8 @@
             </td>
         
         </tr>
+        @endforeach
+        @endforeach
         @endforeach
 
     </tbody>
