@@ -81,17 +81,18 @@
 				</a>
 			</li>
 			<li>
-				<a href="{{route('Allmembre')}}">
-					<i class="fa fa-check-circle"></i>
-					<div class="title" id="togg1">Voir tous les Membres</div>
-				</a>
-			</li>
-			<li>
 				<a href="{{route('addMembre')}}">
 					<i class="far fa-id-card"></i>
 					<div class="title">Ajouter un Membre</div>
 				</a>
 			</li>
+			<li>
+				<a href="{{route('Allmembre')}}">
+					<i class="fa fa-check-circle"></i>
+					<div class="title" id="togg1">Voir tous les Membres</div>
+				</a>
+			</li>
+			
 		</ul>
 	</div>
 

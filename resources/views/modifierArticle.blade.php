@@ -8,6 +8,8 @@
 			<form method="POST" action="{{route('editArticleBD')}}" enctype="multipart/form-data">
 				@csrf
 				<input type="hidden" name="id" value="{{$article->id}}" />
+                
+               
                                 @if(session()->get('success'))
                     <div class="alert alert-success">
                     {{ session()->get('success') }}  
@@ -30,9 +32,31 @@
                                 
                          </div>
                          <div class="form-group">
+                          <label for="category">Catégorie </label>
+                          <select name="category" class="form-control">
+                                            <option value="{{$article->category}}"></option>
+                                            <option value="Evénnement">Evénnement</option>
+                                            <option value="Nouveauté" >Nouveauté</option>
+                                            
+                          </select>
+
+                      </div>
+                         <div class="form-group">
+                            <label>Nom de l'allbum </label>
+                            <input type="text" value="{{$allbum->nom_allbum}}" required name="nom_allbum" class="form-control" 
+                                >
+                                
+                         </div>
+                         <div class="form-group">
+                            <label>Description de l'allbum</label>
+                            <input type="text" value="{{$allbum->description_allbum}}" required name="description_allbum" class="form-control" 
+                                >
+                                
+                         </div>
+                         <div class="form-group">
                         <label>Photo</label>
-                        <input type="file"  name="URL" class="form-control" 
-                        value=""  placeholder="Choisissez une photo" multiple>
+                        <input type="file"  name="url" class="form-control" 
+                        value="{{$image->url}}"  placeholder="Choisissez une photo" multiple>
                      </div>
 
                      

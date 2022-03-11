@@ -42,7 +42,7 @@
             <td>{{$eq->id}}</td>
             <td>{{$eq->nom_membre}}</td>
             <td>{{$eq->prenom_membre}}</td>
-            <td>{{$eq->spacialite}}</td>
+            <td>{{$eq->specialite}}</td>
             <td>{{$eq->description_membre}}</td>
             <td>{{$eq->image}}</td>
             <td>{{$eq->contact}}</td>
@@ -51,10 +51,10 @@
             
             
            
-            <td><a href="{{route('editMembre')}}" class="btn btn-primary">Modifier</a></td>
+            <td><a href="{{route('modifierMembre',$eq->id)}}" class="btn btn-primary">Modifier</a></td>
             <td>
                 
-                <a class="btn btn-sm btn-danger" href="" onclick="return confirm('Vous Êtes sûr de supprimer cet article ?')">Supprimer</a>
+                <a class="btn btn-sm btn-danger" href="{{route('deleteMembreBD',$eq->id)}}" onclick="return confirm('Vous Êtes sûr de supprimer cette membre?')">Supprimer</a>
 
           
             </td>

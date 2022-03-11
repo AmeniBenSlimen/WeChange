@@ -12,11 +12,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', function () {
+    return view('welcome');
+})->name('welcome');
 
 
-
-
-
+Route::get('/', '\App\Http\Controllers\EquipeController@welcome')->name('welcome');
 //Route::get('/organization','\App\Http\Controllers\ArticleController@organization')->name('organization');
 
 Auth::routes();
@@ -24,7 +25,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 //retourne tous les article
 Route::get('/AllArticles','\App\Http\Controllers\ArticleController@getAllArticle')->name('AllArticles');
-
+Route::get('/','\App\Http\Controllers\ArticleController@index')->name('index');
 //retourne le formulaire d'ajout articla
 Route::get('/addArticle', '\App\Http\Controllers\ArticleController@addArticle')
 		->name('addArticle');
@@ -74,8 +75,10 @@ Route::post('/AddAllbumBD','\App\Http\Controllers\ArticleController@AddAllbumBD'
 Route::post('/AddImagesBD','\App\Http\Controllers\ArticleController@AddImagesBD')->name('AddImagesBD');
 
 Route::get('/Allmembre','\App\Http\Controllers\EquipeController@Allmembre')->name('Allmembre');
+Route::get('/addMembre','\App\Http\Controllers\EquipeController@addMembre')->name('addMembre');
+Route::Post('/MembreBD', '\App\Http\Controllers\EquipeController@MembreBD')->name('MembreBD');
 
-
-
-Route::get('/editMembre/{id}', '\App\Http\Controllers\EquipeController@editMembre')->name('editMembre');
+Route::get('/modifierMembre/{id}', '\App\Http\Controllers\EquipeController@modifierMembre')->name('modifierMembre');
 Route::Post('/editMembreBD', '\App\Http\Controllers\EquipeController@editMembreBD')->name('editMembreBD');
+Route::get('/deleteMembreBD/{id}', '\App\Http\Controllers\EquipeController@deleteMembreBD')->name('deleteMembreBD');
+

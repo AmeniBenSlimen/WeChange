@@ -15,6 +15,8 @@ class ContactController extends Controller
         return view('contact');
     }
 
+    
+
     public function contactBD(Request $request)
     {
         Mail::to('amenibenslimen9@gmail.com')->send(new Contacter($request->except('_token')));

@@ -18,12 +18,22 @@ class ArticleController extends Controller
 
   
     public function getAllArticle(){
+        $aa = Article ::where('id',$id);
+        $bb = Allbum ::where('id',$id)->with('article')->first();
+       // $ii = Image ::all()->where('id',$id)->with('allbum')->first();
+        $ii=Image::all()->where('image.allbum_id','=',function($query){
+            $query->from('allbum')->select('id')->where('allbum.article_id','=','article_id');
+        })->get();
+        return view('AllArticle', compact('aa','bb','ii'));
+    }
+ 
+    
+    public function index(){
         $aa = Article :: all();
         $bb = Allbum :: all();
         $ii = Image :: all();
-        return view('AllArticle', compact('aa','bb','ii'));
+        return view('welcome', compact('aa','bb','ii'));
     }
-
    
     public function addArticle(){
         
@@ -81,17 +91,40 @@ class ArticleController extends Controller
     {
         
         $article=Article::where('id',$id)->first();
+        $allbum=Allbum::where('id',$id)->first();
+        $image=Image::where('id',$id)->first();
 
-        return view('modifierArticle',compact('article'));
+        return view('modifierArticle',compact('article','allbum','image'));
     }
 
     public function editArticleBD(Request $request)
     {
-        $article=\App\Models\Article::where('id',$request->id)->first();
+        $article=Article::where('id',$request->id)->first();
+        $allbum=Allbum::where('id',$request->id)->first();
+        $image=Image::where('id',$request->id)->first();
+
         $article->titre=$request->titre;
         $article->description=$request->description;
+        $article->category=$request->category;
+       
+        $allbum->nom_allbum=$request->nom_allbum;
+        $allbum->description_allbum=$request->description_allbum;
 
+            foreach($request->file('url') as $file)
+              {
+                  $name = $file->getClientOriginalName();
+                  $name=time().'.'.$name;
+                  $file->move('public/multiple_image/', $name);  
+                  $image = new Image();
+                  $image->url = $name;
+                  $image->allbum_id=$request->allbum;
+                   
+              }
+           
+              
             $article->update();
+            $allbum->update();
+            $image->update();
           
             return redirect()->route('AllArticles')->with('success', 'Article Modifier avec succèss');
             
@@ -99,8 +132,12 @@ class ArticleController extends Controller
 
     public function deleteArticleBD(Request $request)
     {
-        $article=\App\Models\Article::where('id',$request->id)->first();
+        $article=Article::where('id',$request->id)->first();
+        $allbum=Allbum::where('id',$request->id)->first();
+        $image=Image::where('id',$request->id)->first();
         $article->delete();
+        $allbum->delete();
+        $image->delete();
 
         return redirect()->route('AllArticles')->with('success', 'Article Supprimer avec succèss');
 

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAllbumsTable extends Migration
+class CreateEquipesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateAllbumsTable extends Migration
      */
     public function up()
     {
-        Schema::create('allbums', function (Blueprint $table) {
+        Schema::create('equipes', function (Blueprint $table) {
             $table->id();
-            $table->string('nom_allbum');
-            $table->string('description_allbum');
-            $table->foreignId('article_id')->constrained('articles')->onDelete('cascade');
+            $table->string('nom_membre');
+            $table->string('prenom_membre');
+            $table->string('description_membre');
+            $table->string('image');
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class CreateAllbumsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('allbums');
+        Schema::dropIfExists('equipes');
     }
 }

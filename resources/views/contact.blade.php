@@ -58,14 +58,14 @@ nav ul li a {
     <!--navigation------------------------->
     <nav>
       <!--logo-->
-      <a href="{{route('welcome')}}"><img src="images/logo.jpg"></a>
+      <a href=""><img src="images/logo.jpg"></a>
       <!--menu-->
       <ul>
-        <li><a href="#home" class="active">@lang('public.Acceuil')</a></li>
-        <li><a href="#sobre">@lang('public.Organization')</a></li>
-        <li><a href="#projetos">@lang('public.Articles')</a></li>
+        <li><a href="" class="active">@lang('public.Acceuil')</a></li>
+        <li><a href="">@lang('public.Organization')</a></li>
+        <li><a href="">@lang('public.Articles')</a></li>
         <li><a href="{{route('equipe')}}">@lang('public.Equipe')</a></li>
-        <li><a href="#contato">@lang('public.Contact')</a></li>
+        <li><a href="">@lang('public.Contact')</a></li>
         
       </ul>
       <div class="dropdown" style="margin-reight:20px">

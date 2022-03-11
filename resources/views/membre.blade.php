@@ -153,12 +153,12 @@ p {
                     </div><br />
                 @endif
           <div class="form-group">
-              <label for="titre">Nom membre :</label>
+              <label for="titre">Nom :</label>
               <input type="text" class="form-control" name="nom_membre" required/>
           </div>
 
           <div class="form-group">
-              <label for="description">Prénom membre :</label>
+              <label for="description">Prénom :</label>
               <textarea type="text" class="form-control" name="prenom_membre" required></textarea>
           </div>
           <div class="form-group">
