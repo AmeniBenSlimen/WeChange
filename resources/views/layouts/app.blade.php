@@ -28,6 +28,53 @@
 body{
     background-color: white;
 }
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  background-color: #ffffff;
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+  padding: 0px 5%;
+}
+nav ul {
+  display: flex;
+}
+.toggle {
+  display: none;
+}
+
+nav ul li a {
+  margin: 30px;
+  font-family: myriad pro regular;
+  color: #505050;
+  font-size: 18px;
+  font-weight: 700;
+}
+.logo {
+  font-family: RoadTest;
+  color: #000000;
+  font-size: 22px;
+  font-weight: 1000;
+}
+.active {
+  color: #2d2a2a;
+  font-weight: bold;
+}
+
+.clearfix {
+  clear: both;
+}
+
     </style>
 
 </head>
@@ -35,13 +82,20 @@ body{
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    <img src="images/logo.jpg">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
 
+                <ul>
+        <li><a href="{{route('index')}}" class="active">Acceuil</a></li>
+        <li><a href="{{route('addArticle')}}" class="active">Publier Article</a></li>
+        <li><a href="{{route('AllArticles')}}">Tous les Articles</a></li>
+        <li><a href="{{route('addMembre')}}">Publier Membre</a></li>
+        <li><a href="{{route('Allmembre')}}">Tous les Membres</a></li>
+   
+      </ul>
+                <div>
+
+</div>
+            
+    
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
@@ -86,6 +140,7 @@ body{
                     </ul>
                 </div>
             </div>
+         
         </nav>
 
         <main class="py-4">

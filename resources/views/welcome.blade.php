@@ -4,7 +4,6 @@
   <meta charset="utf-8">
   <title>We Change Website</title>
  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
   <style>
@@ -795,6 +794,24 @@ nav  img{
   height: 50px;
   margin-left:10px;
 }
+@import 'nib';
+@import 'jeet'
+@import url(https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Urbanist:wght@500&display=swap);
+
+
+video {
+	border: 4px ;
+	display: inline-block;
+	border-radius: 15px;
+	background: black;
+	padding: 2%;
+}
+
+
+/***************************
+  SETTINGS
+***************************/
+
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
         
         .fw-5 {font-weight: 500;}
@@ -908,10 +925,6 @@ nav  img{
                 content: unset;
             }
         }
-/***************************
-  SETTINGS
-***************************/
-
   </style>
 </head>
 
@@ -921,7 +934,7 @@ nav  img{
     <nav>
       
       <!--logo-->
-      <a href="#home"><img src="images/logo.jpg"></a>
+      <a href=""><img src="images/logo.jpg"></a>
       <!--menu-->
       <div class="container">
     
@@ -929,11 +942,11 @@ nav  img{
 </div>
 
       <ul>
-        <li><a href="#home" class="active">@lang('public.Acceuil')</a></li>
+        <li><a href="{{route('index')}}" class="active">@lang('public.Acceuil')</a></li>
         <li><a href="#sobre">@lang('public.Organization')</a></li>
-        <li><a href="#projetos">@lang('public.Articles')</a></li>
+        <li><a href="{{route('viewArticle')}}">@lang('public.Articles')</a></li>
         <li><a href="{{route('equipe')}}">@lang('public.Equipe')</a></li>
-        <li><a href="#contato">@lang('public.Contact')</a></li>
+        <li><a href="{{route('contact')}}">@lang('public.Contact')</a></li>
         
       </ul>
       <!--bars--------------->
@@ -972,46 +985,47 @@ nav  img{
 
     <!--about-me-text-->
     <div class="about-text">
-      <p>@lang('public.Organization')</p><br>
+      <p>Objectif du projet </p><br>
       <p></p>
-      <p style="font-family: Times New Roman">@lang('public.Association non gouvernementale
-	à but non lucratif, à pour objectif renforcer la citoyenneté et développement
-	au Nord-Est West (Siliana, Béja, Kef
-	et Jandouba)')</p>
+      <p style="font-family: Times New Roman;font-size:22px">L'objectif de ce projet et d'impliquer le secteur d’éco-tourisme comme un vecteur d’économie locale pour 
+améliorer les services qualitatifs de secteur écotourisme <br>dans la zone « Bargou-Sarej ».
+</p>
 
     </div>
   </div>
 
- 
- <center>
+</div>
+<center>
+
+<br>
+
   <main>
     <br>
-  @foreach($aa as $a)
-  @foreach($bb as $b)
+ 
   
        
             
-                        <div class="card-rb-2-title fw-7">{{$b->nom_allbum}}</div>
-                        <div class="card-rb-2-text fw-5">{{$b->description_allbum}}</div>
+                        <div class="card-rb-2-title fw-7" style="font-size:20px">We change نحن نغير</div>
+                        <div class="card-rb-2-text fw-5" style="margin-left:50px;margin-right:50px;font-size:18px">🔴 مداخلة  عدد من شباب  "بلدية الروحية" التابعة لولاية سليانة بخصوص انطبعاتهم و مستوى انتظاراتهم في ما يخص دائرتهم البلدية.
+🔴 كما تطرقو إلى مستوى الخدمات و مدى استجابتها لمطالبهم المشروعة من أجل تحقيق التنمية و تكريس مبدأ المواطنة من خلال ممارسة حق المساءلة للمجلس البلدي بالروحيةو ذلك بتوجههم بعدد من مطالب النفاذ الى المعلومة.</div>
                       
                     </div>
-              @foreach($ii as $i) 
-              <img src="{{asset('public/multiple_image/'.$i->url)}}" alt="" height="200px" width="200px">
-              @endforeach
               
-                <div class="card-title fw-7">{{$a->titre}}</div>
-                <div class="card-text fw-5">{{$a->description}}</div>
-                <div class="card-text fw-5">{{$a->created_at}}</div>
-                <div class="card-right-body"></div><hr>
+                    <br><br>  
+                
+                <div class="card-text fw-5" style="margin-left:50px;margin-right:50px"><video width="600" height="400" controls>
+  <source src="images/video.mp4" type="video/mp4">
+  <source src="images/video.ogg" type="video/ogg">
+  Your browser does not support the video tag.
+</video></div>
+              
+                
                 
            
+<br><br>         
            
-            @endforeach
-            @endforeach
     </main>
-</center>
-<br>
- 
+    <br><br>  
   <!--if you have any project in your mind contact me-->
   <div id="contato" class="contact-me">
     <p>@lang('public.Si vous souhaitez parler d\'un projet, contactez-nous..')</p><br>
@@ -1060,68 +1074,8 @@ nav  img{
 
 </body>
 <script>
-  $(document).ready(function () {
-  $(".toggle").click(function () {
-    $(".toggle").toggleClass("active");
-    $("nav").toggleClass("active");
-  });
-});
+ 
 
-$(function () {
-  // contact form animations
-  $("#contact").click(function () {
-    $("#contactForm").fadeToggle();
-  });
-  $(document).mouseup(function (e) {
-    var container = $("#contactForm");
-
-    if (
-      !container.is(e.target) && // if the target of the click isn't the container...
-      container.has(e.target).length === 0
-    ) {
-      // ... nor a descendant of the container
-      container.fadeOut();
-    }
-  });
-});
-function change() {
-  var img_arr = [
-    "https://source.unsplash.com/1280x720/?youtube",
-    "https://source.unsplash.com/1280x720/?nature",
-    "https://source.unsplash.com/1280x720/?clouds"
-  ];
-
-  var left = document.getElementById("left-blured-img");
-  var main = document.getElementById("main-img");
-  var right = document.getElementById("right-blured-img");
-
-  var index = 0;
-
-  setInterval(() => {
-    if (index < img_arr.length - 2) {
-      left.src = img_arr[index];
-      main.src = img_arr[index + 1];
-      right.src = img_arr[index + 2];
-    } else if (index == img_arr.length - 2) {
-      left.src = img_arr[index];
-      main.src = img_arr[index + 1];
-      right.src = img_arr[0];
-    } else if (index == img_arr.length - 1) {
-      left.src = img_arr[index];
-      main.src = img_arr[0];
-      right.src = img_arr[1];
-    } else if (index == img_arr.length) {
-      index = 0;
-      left.src = img_arr[index];
-      main.src = img_arr[index + 1];
-      right.src = img_arr[index + 2];
-    }
-
-    index++;
-  }, 3000);
-}
-
-change();
 
 </script>
 </html>

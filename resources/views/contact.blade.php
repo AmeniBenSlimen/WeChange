@@ -7,84 +7,12 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
     <style>
-        ul {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-}
-nav  img{
-  height: 90px;
-    width: 150px;
-    border-radius: 50%;
-}
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 60px;
-  background-color: #ffffff;
-  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
-  padding: 0px 5%;
-}
-nav ul {
-  display: flex;
-}
-.toggle {
-  display: none;
-}
-
-nav ul li a {
-  margin: 30px;
-  font-family: myriad pro regular;
-  color: #505050;
-  font-size: 18px;
-  font-weight: 700;
-}
-
-.active {
-  color: #2d2a2a;
-  font-weight: bold;
-}
-.clearfix {
-  clear: both;
-}
-
+       
     </style>
 </head>
 <body>
-<section id="home">
-    <!--navigation------------------------->
-    <nav>
-      <!--logo-->
-      <a href=""><img src="images/logo.jpg"></a>
-      <!--menu-->
-      <ul>
-        <li><a href="" class="active">@lang('public.Acceuil')</a></li>
-        <li><a href="">@lang('public.Organization')</a></li>
-        <li><a href="">@lang('public.Articles')</a></li>
-        <li><a href="{{route('equipe')}}">@lang('public.Equipe')</a></li>
-        <li><a href="">@lang('public.Contact')</a></li>
-        
-      </ul>
-      <div class="dropdown" style="margin-reight:20px">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
-    @lang('public.Language') 
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-    <a href="locale/en" class="dropdown-item" type="button">English<i><img src="images/eng.webp" style="height: 30px;width: 30px;margin-left: 9px;font-size: 14px"></i></a>
-    <a href="locale/fr" class="dropdown-item" type="button">Français<i><img src="images/fr.webp" style="height:30px;width: 30px "></i> </a>
-    <a href="locale/ar" class="dropdown-item" type="button">Arabe<i><img src="images/tun.png" style="height: 30px;width: 30px;margin-left: 20px"></i> </a>
-    
-  </div>
-</div>
-      <!--bars--------------->
-      <div class="toggle"></div>
-
-    </nav>
-    <div class="clearfix"></div>
-  </section>
+@include('layouts.header')
+   
     <div class="container">
         <div class="row mt-5 mb-5">
             <div class="col-8 offset-2 mt-5">
@@ -166,6 +94,7 @@ nav ul li a {
                 </div>
             </div>
         </div>
-    </div>
+    </div>  
 </body>
+@extends('layouts.footer')
 </html>

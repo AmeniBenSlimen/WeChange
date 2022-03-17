@@ -760,16 +760,12 @@ nav  img{
   margin: 0;
   padding: 0%;
 }
-.container {
-  height: 40%;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-</style>
 
+</style>
 <body>
+
+
+ 
     <footer id="redes">
     <!--heading-->
     <p>@lang('public.We Change')</p><br>
@@ -805,6 +801,5 @@ nav  img{
     
     
   </div>
-
 </body>
 <html>

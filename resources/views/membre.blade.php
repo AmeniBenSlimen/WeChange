@@ -159,7 +159,7 @@ p {
 
           <div class="form-group">
               <label for="description">Prénom :</label>
-              <textarea type="text" class="form-control" name="prenom_membre" required></textarea>
+              <input type="text" class="form-control" name="prenom_membre" required/>
           </div>
           <div class="form-group">
               <label for="specialite">Spécialité :</label>

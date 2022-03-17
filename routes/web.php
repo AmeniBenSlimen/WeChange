@@ -16,8 +16,9 @@ Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
-
-Route::get('/', '\App\Http\Controllers\EquipeController@welcome')->name('welcome');
+Route::get('/viewArticle','\App\Http\Controllers\ArticleController@viewArticle')->name('viewArticle');
+//Route::get('/viewArticle','\App\Http\Controllers\ArticleController@Article')->name('Article');
+//Route::get('/', '\App\Http\Controllers\EquipeController@welcome')->name('welcome');
 //Route::get('/organization','\App\Http\Controllers\ArticleController@organization')->name('organization');
 
 Auth::routes();
@@ -45,7 +46,7 @@ Route::Post('/editArticleBD', '\App\Http\Controllers\ArticleController@editArtic
 Route::get('/deleteArticleBD/{id}', '\App\Http\Controllers\ArticleController@deleteArticleBD')
 		->name('deleteArticleBD');
 
-Route::get('/welcome','\App\Http\Controllers\ArticleController@getAllArticle')->name('AllArticles');
+//Route::get('/AllArticles','\App\Http\Controllers\ArticleController@getAllArticle')->name('AllArticles');
 
 //afficher le formulaire de contact
 Route::get('/contact', '\App\Http\Controllers\ContactController@contact')->name('contact');

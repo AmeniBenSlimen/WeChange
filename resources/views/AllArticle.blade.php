@@ -1,6 +1,6 @@
 <!-- index.blade.php -->
 
-@extends('layouts.layoutss')
+@extends('layouts.app')
 
 @section('content')
 
@@ -54,12 +54,7 @@
             
            
             <td><a href="{{ route('editArticle', $a->id)}}" class="btn btn-primary">Modifier</a></td>
-            <td>
-                
-                <a class="btn btn-sm btn-danger" href="{{route('deleteArticleBD',$a->id)}}" onclick="return confirm('Vous Êtes sûr de supprimer cet article ?')">Supprimer</a>
-
-          
-            </td>
+            <td><a class="btn btn-sm btn-danger" href="{{route('deleteArticleBD',$a->id)}}" onclick="return confirm('Vous Êtes sûr de supprimer cet article ?')">Supprimer</a></td>
         
         </tr>
         @endforeach
@@ -68,6 +63,7 @@
 
     </tbody>
   </table>
+  
   
 <div>
 @endsection

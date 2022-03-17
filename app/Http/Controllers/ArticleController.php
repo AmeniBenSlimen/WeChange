@@ -7,33 +7,45 @@ use App\Models\Image;
 use App\Models\Allbum;
 use Illuminate\Support\Facades\File;
 
+
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
 {
 
   
-
+public function viewArticle(){
+    $aa = Article :: all()->take(20);
+    $bb = Allbum :: all();
+    $ii = Image ::all()->take(3);
+    return view('viewArticle', compact('aa','bb','ii'));
+}
   
 
-  
-    public function getAllArticle(){
-        $aa = Article ::where('id',$id);
-        $bb = Allbum ::where('id',$id)->with('article')->first();
-       // $ii = Image ::all()->where('id',$id)->with('allbum')->first();
-        $ii=Image::all()->where('image.allbum_id','=',function($query){
+public function getAllArticle(){
+
+    $aa=Article::paginate(5);
+    $bb=Allbum::paginate(5);
+    $ii=Image::paginate(5);
+    
+    return view ('AllArticle',compact('aa','bb','ii'));
+}
+
+    public function Article($id){
+        $aa=Article::where('id',$id)->first();
+        $bb=Allbum::where('id',$id)->first();
+        $ii=Image::where('id',$id)->first();
+        /* $ii=Image::all()->where('image.allbum_id','=',function($query){
             $query->from('allbum')->select('id')->where('allbum.article_id','=','article_id');
-        })->get();
-        return view('AllArticle', compact('aa','bb','ii'));
+        })->get(); */
+        return view('viewArticle', compact('aa','bb','ii'));
     }
  
     
-    public function index(){
-        $aa = Article :: all();
-        $bb = Allbum :: all();
-        $ii = Image :: all();
-        return view('welcome', compact('aa','bb','ii'));
-    }
+     public function index(){
+       
+        return view('welcome',);
+    } 
    
     public function addArticle(){
         
@@ -109,7 +121,7 @@ class ArticleController extends Controller
        
         $allbum->nom_allbum=$request->nom_allbum;
         $allbum->description_allbum=$request->description_allbum;
-
+        $allbum->description_allbum=$request->description_allbum;
             foreach($request->file('url') as $file)
               {
                   $name = $file->getClientOriginalName();
@@ -133,12 +145,9 @@ class ArticleController extends Controller
     public function deleteArticleBD(Request $request)
     {
         $article=Article::where('id',$request->id)->first();
-        $allbum=Allbum::where('id',$request->id)->first();
-        $image=Image::where('id',$request->id)->first();
+        
         $article->delete();
-        $allbum->delete();
-        $image->delete();
-
+        
         return redirect()->route('AllArticles')->with('success', 'Article Supprimer avec succèss');
 
     }
