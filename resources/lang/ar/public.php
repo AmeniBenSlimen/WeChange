@@ -24,6 +24,15 @@ return[
 	'Copyright 2022 We Change'=>'حقوق الطبع والنشر 2022 نحن نتغير',
 	'Language'=>'لغة',
 	'Rechercher'=>'بحث',
-	'Equipe'=>'فريق'
+	'Equipe'=>'فريق',
+	'Objectif du projet'=>'الهدف من المشروع',
+	'L\'objectif'=>'الهدف',
+	'de ce projet et'=>'من هذا المشروع و',
+	'd\'impliquer'=>'تحسين',
+	'le secteur d\’éco-tourisme comme un vecteur'=>'قطاع السياحة البيئية كناقل',
+	'd\’économie'=>'للاقتصاد ',
+	'locale pour améliorer les services qualitatifs de secteur écotourisme'=>' محلي 
+	تحسين جودة خدمات قطاع السياحة البيئية',
+	'dans la zone « Bargou-Sarej ».'=>'في منطقة "برقو - سرج".'
 ];
 ?>

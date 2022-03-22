@@ -985,10 +985,10 @@ video {
 
     <!--about-me-text-->
     <div class="about-text">
-      <p>Objectif du projet </p><br>
+      <p>@lang('public.Objectif du projet') </p><br>
       <p></p>
-      <p style="font-family: Times New Roman;font-size:22px">L'objectif de ce projet et d'impliquer le secteur d’éco-tourisme comme un vecteur d’économie locale pour 
-améliorer les services qualitatifs de secteur écotourisme <br>dans la zone « Bargou-Sarej ».
+      <p style="font-family: Times New Roman;font-size:22px">@lang('public.L\'objectif') @lang('public.de ce projet et') @lang('public.d\'impliquer') @lang('public.le secteur d\’éco-tourisme comme un vecteur') @lang('public.d\’économie')@lang('public.locale pour améliorer les services qualitatifs de secteur écotourisme') 
+      <br>@lang('public.dans la zone « Bargou-Sarej ».')'
 </p>
 
     </div>

@@ -8,174 +8,195 @@
 @extends('layouts.app')
 @section('content')
 <style>
-  .uper {
-    margin-top: 40px;
-  }
-  .carduper{
-      margin-left:350px;
-      margin-right:350px;
-  }
-  html * {
+   @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
-
-p {
-  margin: 0;
+body {
+  background: linear-gradient(to bottom right, #92c5fe 0%, #cbc2fb 100%);
+  font-family: "Open Sans", sans-serif;
+  min-height: 90vh;
 }
-
-.upload {
-  &__box {
-    padding: 40px;
-  }
-  &__inputfile {
-    width: .1px;
-    height: .1px;
-    opacity: 0;
-    overflow: hidden;
-    position: absolute;
-    z-index: -1;
-  }
-  
-  &__btn {
-    display: inline-block;
-    font-weight: 600;
-    color: #fff;
-    text-align: center;
-    min-width: 116px;
-    padding: 5px;
-    transition: all .3s ease;
-    cursor: pointer;
-    border: 2px solid;
-    background-color: #4045ba;
-    border-color: #4045ba;
-    border-radius: 10px;
-    line-height: 26px;
-    font-size: 14px;
-    
-    &:hover {
-      background-color: unset;
-      color: #4045ba;
-      transition: all .3s ease;
-    }
-    
-    &-box {
-      margin-bottom: 10px;
-    }
-  }
-  
-  &__img {
-    &-wrap {
-      display: flex;
-      flex-wrap: wrap;
-      margin: 0 -10px;
-    }
-    
-    &-box {
-      width: 200px;
-      padding: 0 10px;
-      margin-bottom: 12px;
-    }
-    
-    &-close {
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background-color: rgba(0, 0, 0, 0.5);
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        text-align: center;
-        line-height: 10px;
-        z-index: 1;
-        cursor: pointer;
-
-        &:after {
-          content: '\2716';
-          font-size: 10px;
-          color: white;
-        }
-      }
-  }
+img {
+  width: 100%;
+  height:100%;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  display: block;
 }
-
-.img-bg {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+a {
+  margin-left: 30px;
+  color: #3c63cc;
+  font-weight: 600;
+}
+a:hover {
+  margin-left: 30px;
+  color: #2fa1fd;
+}
+.modernForm {
+  max-width: 1200px;
+  display: flex;
+  margin: 100px auto;
+  background-color: #fff;
+  border-radius: 10px;
+}
+.imageSection {
+  flex-basis: 50%;
   position: relative;
-  padding-bottom: 100%;
+  color: white;
 }
-.button {
-  background-color: #04AA6D;
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(96, 30, 150, 0.507);
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  z-index: 0;
+}
+.textInside,
+.service {
+  position: absolute;
+}
+.textInside {
+  bottom: 200px;
+  right: 120px;
+}
+.tagLine {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+.price {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.service {
+  bottom: 30px;
+  right: 50px;
+}
+.service p {
+  font-weight: 700;
+}
+.contactForm {
+  flex-basis: 45%;
+  margin: auto;
+  color: #555;
+  padding-left: 30px;
+}
+.contactForm h1 {
+  padding: 15px 0;
+}
+input[type="email"],
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: rgb(177, 177, 177) 1px solid;
+  margin-top: 10px;
+}
+.name {
+  position: relative;
+  margin-bottom: 20px;
+}
+.iconName {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+
+input[type="checkbox"] {
+  margin-right: 10px;
+}
+input[type="submit"] {
+  background-color: #3c63cc;
+  font-size: 1rem;
   border: none;
   color: white;
-  padding: 20px;
-  text-align: center;
+  padding: 10px 50px;
+  border-radius: 5px;
   text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
+  margin: 30px 0;
+  cursor: pointer;
+  float: left;
+}
+input[type="submit"]:hover {
+  background-color: #2fa1fd;
 }
 
-
-.button2 {border-radius: 4px;}
-
+@media only screen and (max-width: 768px) {
+  .modernForm {
+    flex-wrap: wrap;
+  }
+  .imageSection,
+  .contactForm {
+    flex-basis: 100%;
+  }
+  .overlay,
+  img {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  .contactForm {
+    padding-right: 30px;
+  }
+}
 </style>
 
+ 
 
-<div class="carduper">
-@if(session()->get('success'))
-    <div class="alert alert-success">
-      {{ session()->get('success') }}  
-    </div><br />
-  @endif
-  <div class="card-header">
+  
+   
+    <div class="modernForm">
+      <div class="imageSection">
+        <div class="image">
+          <div class=""></div>
+          <img src="images/logo.jpg" style="hight:100px">
+        </div>
+       
+        
+      </div>
+      <div class="contactForm">
+        <h1>Crée Article </h1>
     
-    Créer un Article
-  </div>
-
-  <div class="card-body">
-    @if ($errors->any())
-      <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-              <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-      </div><br/>
-    @endif
-
+     
       <form method="post" action="{{route('addArticleBD')}}">
       @csrf
       <input type="hidden" value="{{Auth::user()->id}}" name="user">
-          <div class="form-group">
-              <label for="titre">Titre de l'article :</label>
-              <input  type="text" class="form-control" name="titre" required/>
+      @if(session()->get('success'))
+                    <div class="alert alert-success">
+                    {{ session()->get('success') }}  
+                    </div><br />
+                @endif
+                <div class="name">
+            <label for="titre" >Titre de l'article :</label>
+            <input type="text"  name="titre"  placeholder="Titre de l'article" required/>
+            <div class="iconName"><i class="fa-solid fa-user"></i></div>
           </div>
-
-          <div class="form-group">
-              <label for="description">Description :</label>
-              <textarea type="text" class="form-control" name="description" required></textarea>
+          <div class="name">
+            <label for="description">Description :</label>
+            <textarea type="text" class="form-control" name="description" placeholder="Description de l'article" required></textarea>
+            <div class="iconName"><i class="fa-solid fa-lock"></i></div>
           </div>
-          <div class="form-group">
-                          <label for="category">Catégorie </label>
-                          <select name="category" class="form-control">
+          <div class="name">
+            <label for="category">Catégorie :</label>
+            <select name="category" class="form-control">
                                             <option value="">Choisissez un Catégorie</option>
                                             <option value="Evénnement">Evénnement</option>
                                             <option value="Nouveauté" >Nouveauté</option>
                                             
                           </select>
+            <div class="iconName"><i class="fa-solid fa-lock"></i></div>
+          </div>
+          <center> <input type="submit" value="Suivant"></center>
+        </form>
+      </div>
+    </div>
+  </body>
 
-                      </div>
          
-          <br/>
-         <center> 
-           <button type="submit" class="button button2">Suivant</button>
-                  
-        </center>
-      </form>
-      
-  </div>
-</div>
 @endsection
 

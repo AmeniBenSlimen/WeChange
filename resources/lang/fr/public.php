@@ -24,6 +24,14 @@ return[
 	'Copyright 2022 We Change'=>'Copyright 2022 We Change',
 	'Language'=>'Langue',
 	'Rechercher'=>'Rechercher',
-	'Equipe'=>'Equipe'
+	'Equipe'=>'Equipe',
+	'Objectif du projet'=>'Objectif du projet',
+	'L\'objectif'=>'L\'objectif',
+	'de ce projet et'=>'de ce projet et',
+	'd\'impliquer'=>'d\'impliquer',
+	'le secteur d\’éco-tourisme comme un vecteur'=>'e secteur d\’éco-tourisme comme un vecteur',
+	'd\’économie'=>'d\’économie ',
+	'locale pour améliorer les services qualitatifs de secteur écotourisme'=>'locale pour améliorer les services qualitatifs de secteur écotourisme',
+	'dans la zone « Bargou-Sarej ».'=>'dans la zone « Bargou-Sarej ».'
 ];
 ?>

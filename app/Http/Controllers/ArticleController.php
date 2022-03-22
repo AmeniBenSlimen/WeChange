@@ -12,8 +12,11 @@ use Illuminate\Http\Request;
 
 class ArticleController extends Controller
 {
-
-  
+  /*   public function __construct()
+    {
+        $this->middleware('auth');
+    } */
+ //compact c'est une fonction php qui permet de créé un tableau automatiquement a partir de paramétre donné w bech ya3ref l variable sinon ma ya3rfouch
 public function viewArticle(){
     $aa = Article :: all()->take(20);
     $bb = Allbum :: all();
@@ -76,9 +79,9 @@ public function getAllArticle(){
     public function AddImagesBD(Request $request){
        
                $request->validate([
-            'url' => 'required'
+               'url' => 'required'
           ]);
-      
+//getClientOriginalName :utilisé pour récupérer le nom d'origine du fichier au moment du téléchargement   
               foreach($request->file('url') as $file)
               {
                   $name = $file->getClientOriginalName();

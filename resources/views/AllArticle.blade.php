@@ -7,6 +7,12 @@
 <style>
   .uper {
     margin-top: 40px;
+    margin-left:150px;
+    margin-right:150px;
+  }
+  .ameni{
+    margin-left:100px;
+    margin-right:100px;
   }
 </style>
 
@@ -17,7 +23,7 @@
       {{ session()->get('success') }}  
     </div><br />
   @endif
-
+<div class="ameni">
   <table class="table table-striped">
 
     <thead>
@@ -54,7 +60,7 @@
             
            
             <td><a href="{{ route('editArticle', $a->id)}}" class="btn btn-primary">Modifier</a></td>
-            <td><a class="btn btn-sm btn-danger" href="{{route('deleteArticleBD',$a->id)}}" onclick="return confirm('Vous Êtes sûr de supprimer cet article ?')">Supprimer</a></td>
+            <td><a class="btn btn btn-danger" href="{{route('deleteArticleBD',$a->id)}}" onclick="return confirm('Vous Êtes sûr de supprimer cet article ?')">Supprimer</a></td>
         
         </tr>
         @endforeach
@@ -64,6 +70,6 @@
     </tbody>
   </table>
   
-  
+</div>
 <div>
 @endsection

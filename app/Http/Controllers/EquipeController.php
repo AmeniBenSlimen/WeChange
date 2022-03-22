@@ -7,6 +7,11 @@ use App\Models\Equipe;
 
 class EquipeController extends Controller
 {
+   /*  public function __construct()
+    {
+        $this->middleware('auth');
+    } */
+    
     public function welcome(){
 
         return view('welcome');

@@ -18,7 +18,7 @@
             <div class="col-8 offset-2 mt-5">
                 <div class="card">
                     <div class="card-header" style="background-color:black">
-                        <h3 class="text-white">Envoyer un Mail ...</h3>
+                        <h3 class="text-white">Contacter</h3>
                     </div>
                     <div class="card-body">
                         
@@ -78,7 +78,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <strong>Message:</strong>
-                                        <textarea name="message" rows="3" class="form-control">{{ old('message') }}</textarea>
+                                        <textarea name="message" rows="3" class="form-control" placeholder="Ecrire votre message ici...">{{ old('message') }}</textarea>
                                         @if ($errors->has('message'))
                                             <span class="text-danger">{{ $errors->first('message') }}</span>
                                         @endif

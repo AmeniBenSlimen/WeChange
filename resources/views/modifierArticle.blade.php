@@ -21,14 +21,14 @@
 
                         <div class="form-group">
                             <label>Titre de l'article</label>
-                            <input type="text" value="{{$article->titre}}" required name="titre" class="form-control" 
-                                >
+                            <input type="text" value="{{$article->titre}}"  name="titre" class="form-control" 
+                               required >
                          </div>
 
                          <div class="form-group">
                             <label>Description de l'article</label>
-                            <input type="text" value="{{$article->description}}" required name="description" class="form-control" 
-                                >
+                            <input type="text" value="{{$article->description}}"  name="description" class="form-control" 
+                              required  >
                                 
                          </div>
                          <div class="form-group">
@@ -43,14 +43,14 @@
                       </div>
                          <div class="form-group">
                             <label>Nom de l'allbum </label>
-                            <input type="text" value="{{$allbum->nom_allbum}}" required name="nom_allbum" class="form-control" 
-                                >
+                            <input type="text" value="{{$allbum->nom_allbum}}" name="nom_allbum" class="form-control" 
+                              required  >
                                 
                          </div>
                          <div class="form-group">
                             <label>Description de l'allbum</label>
-                            <input type="text" value="{{$allbum->description_allbum}}" required name="description_allbum" class="form-control" 
-                                >
+                            <input type="text" value="{{$allbum->description_allbum}}" name="description_allbum" class="form-control" 
+                              required  >
                                 
                          </div>
                          <div class="form-group">
