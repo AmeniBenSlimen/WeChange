@@ -18,32 +18,76 @@ class ArticleController extends Controller
     } */
  //compact c'est une fonction php qui permet de créé un tableau automatiquement a partir de paramétre donné w bech ya3ref l variable sinon ma ya3rfouch
 public function viewArticle(){
-    $aa = Article :: all()->take(20);
-    $bb = Allbum :: all();
-    $ii = Image ::all()->take(3);
-    return view('viewArticle', compact('aa','bb','ii'));
+    $aa = Article :: all();
+    $tab = array ();
+    foreach ($aa as $value){
+        $ii=Allbum :: where('article_id', $value->id)->get()->toArray();
+        foreach($ii as $value2){
+            $allbum=$value2;
+        }
+        $jj=Image :: where('allbum_id', $value2['id'])->get(); 
+        $images=array();
+        foreach($jj as $image){
+        $images[]=$image['url'];
+     }
+     $article=array(
+        "titre"=>$value->titre,
+        "description"=>$value->description,
+        "created_at"=>$value->created_at,
+        "allbum_id"=>$value2['id'],
+        "image"=>$images,
+     );
+     $tab[]=$article;
+   
+    }
+    
+
+    return  view('viewArticle', compact('tab','images'));
 }
   
 
 public function getAllArticle(){
 
-    $aa=Article::paginate(5);
-    $bb=Allbum::paginate(5);
-    $ii=Image::paginate(5);
-    
-    return view ('AllArticle',compact('aa','bb','ii'));
-}
-
-    public function Article($id){
-        $aa=Article::where('id',$id)->first();
-        $bb=Allbum::where('id',$id)->first();
-        $ii=Image::where('id',$id)->first();
-        /* $ii=Image::all()->where('image.allbum_id','=',function($query){
-            $query->from('allbum')->select('id')->where('allbum.article_id','=','article_id');
-        })->get(); */
-        return view('viewArticle', compact('aa','bb','ii'));
+    $aa = Article :: all();
+    $tab = array ();
+    foreach ($aa as $value){
+        $ii=Allbum :: where('article_id', $value->id)->get()->toArray();
+        foreach($ii as $value2){
+            $allbum=$value2;
+        }
+        $jj=Image :: where('allbum_id', $value2['id'])->get(); 
+        $images=array();
+        foreach($jj as $image){
+        $images[]=$image['url'];
+     }
+     $article=array(
+        "id"=>$value->id,
+        "titre"=>$value->titre,
+        "description"=>$value->description,
+        "category"=>$value->category,
+        "nom_allbum"=>$value2['nom_allbum'],
+        "description_allbum"=>$value2['description_allbum'],
+        "image"=>$images,
+     );
+     $tab[]=$article;
     }
  
+    
+    return view ('AllArticle',compact('tab','images'));
+}
+/*$aa = Allbum::join('articles', 'allbums.id', '=', 'articles.allbum_id')
+               ->get(['allbums.*', 'articles.']);*/
+
+   /*  public function Article($id){
+        $aa=Article::where('id',$id)->first();
+        $bb=Allbum::where('id',$id)->first();
+        $ii=Image::where('image.allbum_id','=',function($query){
+            $query->from('allbum')->select('id')->where('allbum.article_id', $id);
+        })->get();
+
+        return view('viewArticle', compact('aa','bb','ii'));
+    }
+  */
     
      public function index(){
        
@@ -104,7 +148,6 @@ public function getAllArticle(){
 
     public function editArticle($id)
     {
-        
         $article=Article::where('id',$id)->first();
         $allbum=Allbum::where('id',$id)->first();
         $image=Image::where('id',$id)->first();
@@ -125,21 +168,21 @@ public function getAllArticle(){
         $allbum->nom_allbum=$request->nom_allbum;
         $allbum->description_allbum=$request->description_allbum;
         $allbum->description_allbum=$request->description_allbum;
-            foreach($request->file('url') as $file)
-              {
-                  $name = $file->getClientOriginalName();
-                  $name=time().'.'.$name;
-                  $file->move('public/multiple_image/', $name);  
-                  $image = new Image();
-                  $image->url = $name;
-                  $image->allbum_id=$request->allbum;
-                   
-              }
-           
-              
+            
+               if ($request->hasfile('url'))
+                {
+                    $file=$request->file('url');
+                    $ext=$file->getClientOriginalName();
+                    $filename=time().'.'.$ext;
+                    $file->move('public/multiple_image/', $filename);
+                    $image->url=$filename;
+                }
+
             $article->update();
             $allbum->update();
             $image->update();
+            
+            
           
             return redirect()->route('AllArticles')->with('success', 'Article Modifier avec succèss');
             

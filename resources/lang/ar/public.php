@@ -33,6 +33,13 @@ return[
 	'd\’économie'=>'للاقتصاد ',
 	'locale pour améliorer les services qualitatifs de secteur écotourisme'=>' محلي 
 	تحسين جودة خدمات قطاع السياحة البيئية',
-	'dans la zone « Bargou-Sarej ».'=>'في منطقة "برقو - سرج".'
+	'dans la zone « Bargou-Sarej ».'=>'في منطقة "برقو - سرج".',
+	'Contacter'=>'اتصل بنا',
+	'Nom'=>'الاسم',
+	'Email'=>'البريد الالكتروني',
+	'Numéro de téléphone'=>'رقم الهاتف الجوال',
+	'Sujet'=>'الموضوع',
+	'Message'=>'رسالة',
+	'Envoyer'=>'ارسال'
 ];
 ?>

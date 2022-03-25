@@ -56,7 +56,7 @@
                          <div class="form-group">
                         <label>Photo</label>
                         <input type="file"  name="url" class="form-control" 
-                        value="{{$image->url}}"  placeholder="Choisissez une photo" multiple>
+                        value="{{$image->url}}"  placeholder="Choisissez une photo">
                      </div>
 
                      

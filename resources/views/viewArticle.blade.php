@@ -121,28 +121,30 @@
  <center>
   <main>
     <br>
-  @foreach($aa as $a)
-  @foreach($bb as $b)
+
   
        
             
-                        <div class="card-rb-2-title fw-7">{{$b->nom_allbum}}</div>
-                        <div class="card-rb-2-text fw-5">{{$b->description_allbum}}</div>
+                       
                       
                     </div>
-              @foreach($ii as $i) 
-              <a href=""> <img src="{{asset('public/multiple_image/'.$i->url)}}" alt="" height="200px" width="200px"></a>
-              @endforeach
               
-                <div class="card-title fw-7">{{$a->titre}}</div>
-                <div class="card-text fw-5">{{$a->description}}</div>
-                <div class="card-text fw-5">{{$a->created_at}}</div>
-                <div class="card-right-body"></div><hr>
-                
-           
-           
-            @endforeach
-            @endforeach
+              
+              
+              @foreach($images as $images) 
+              <img src="{{asset('public/multiple_image/'.$images)}}" alt="" height="200px" width="200px">
+              @endforeach
+              @foreach($tab as $t)
+             
+            <div class="card-title fw-7">{{$t['titre']}}</div>
+            <div class="card-text fw-5">{{$t['description']}}</div>
+            <div class="card-text fw-5">{{$t['created_at']}}</div>
+            <div class="card-right-body"></div><hr>
+            
+       
+       
+        
+        @endforeach 
     </main>
 </center>
 <br>

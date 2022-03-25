@@ -9,7 +9,7 @@ use App\Models\Allbum;
 class Article extends Model
 {
     use HasFactory;
-    
+    protected $guarded=[''];
 protected $table='articles';
 
     

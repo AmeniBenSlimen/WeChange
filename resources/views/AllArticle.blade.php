@@ -42,30 +42,30 @@
     </thead>
 
     <tbody>
-        @foreach($aa as $a)
-        @foreach($bb as $b)
-        @foreach($ii as $i)
+        @foreach($tab as $t)
+      
+        @foreach($images as $im)
       
         <tr>
-            <td>{{$a->id}}</td>
-            <td>{{$a->titre}}</td>
-            <td>{{$a->description}}</td>
-            <td>{{$a->category}}</td>
-            <td>{{$b->nom_allbum}}</td>
-            <td>{{$b->description_allbum}}</td>
-            <td>{{$i->url}}</td>
+            <td>{{$t['id']}}</td>
+            <td>{{$t['titre']}}</td>
+            <td>{{$t['description']}}</td>
+            <td>{{$t['category']}}</td>
+            <td>{{$t['nom_allbum']}}</td>
+            <td>{{$t['description_allbum']}}</td>
+            <td><img src="{{asset('public/multiple_image/'.$im)}}" alt="" height="100px" width="100px"></td>
             
            
             
             
            
-            <td><a href="{{ route('editArticle', $a->id)}}" class="btn btn-primary">Modifier</a></td>
-            <td><a class="btn btn btn-danger" href="{{route('deleteArticleBD',$a->id)}}" onclick="return confirm('Vous Êtes sûr de supprimer cet article ?')">Supprimer</a></td>
+            <td><a href="{{ route('editArticle', $t['id'])}}" class="btn btn-primary">Modifier</a></td>
+            <td><a class="btn btn btn-danger" href="{{route('deleteArticleBD',$t['id'])}}" onclick="return confirm('Vous Êtes sûr de supprimer cet article ?')">Supprimer</a></td>
         
         </tr>
         @endforeach
         @endforeach
-        @endforeach
+       
 
     </tbody>
   </table>
