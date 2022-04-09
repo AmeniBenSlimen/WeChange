@@ -5,6 +5,8 @@ namespace App\Console;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
+// contient tous les commande en mode console
+
 class Kernel extends ConsoleKernel
 {
     /**

@@ -782,10 +782,12 @@ nav  img{
 
     <div class="social-icons2">
 
-      <a href="#home">@lang('public.Acceuil')</a>
-      <a href="#sobre">@lang('public.Organization')</a>
-      <a href="#projetos">@lang('public.Articles')</a>
-      <a href="#contato">@lang('public.Contact')</a>
+      <a href="{{route('index')}}">@lang('public.Acceuil')</a>
+      <a href="{{route('organization')}}">@lang('public.Organization')</a>
+      <a href="{{route('viewArticle')}}">@lang('public.Articles')</a>
+      <a href="{{route('equipe')}}">@lang('public.Equipe')</a>
+      <a href="{{route('contact')}}">@lang('public.Contact')</a>
+     
     
 
     </div>

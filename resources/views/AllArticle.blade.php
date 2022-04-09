@@ -44,14 +44,15 @@
     <tbody>
         @foreach($cc as $c)
         @foreach($aa as $a)
+        @foreach($bb as $b)
       
         <tr>
             <td>{{$a->id}}</td>
-            <td>{{$c->titre}}</td>
-            <td>{{$c->description}}</td>
-            <td>{{$c->category}}</td>
-            <td>{{$c->nom_allbum}}</td>
-            <td>{{$c->description_allbum}}</td>
+            <td>{{$a->titre}}</td>
+            <td>{{$a->description}}</td>
+            <td>{{$a->category}}</td>
+            <td>{{$b->nom_allbum}}</td>
+            <td>{{$b->description_allbum}}</td>
             <td><img src="{{asset('public/multiple_image/'.$c->url)}}" alt="" height="100px" width="100px"></td>
             
            
@@ -59,10 +60,11 @@
             
            
             <td><a href="{{ route('editArticle', $a->id)}}" class="btn btn-primary">Modifier</a></td>
-            <td><a class="btn btn btn-danger" href="{{route('deleteArticleBD',$a->id)}}" onclick="return confirm('Vous Êtes sûr de supprimer cet article ?')">Supprimer</a></td>
+            <td><a class="btn btn btn-danger" href="{{route('deleteArticleBD',$a->id)}}" onclick="return confirm('Vous Êtes sûr de supprimer cet article ?')">Supprimer</a></td>
         
         </tr>
       
+        @endforeach
         @endforeach
         @endforeach
 

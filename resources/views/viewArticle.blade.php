@@ -121,24 +121,22 @@
  <center>
   <main>
     <br>
-
-  
-       
-            
-                       
-                      
                     </div>
               
               
-              
-              @foreach($images as $images) 
+                    @foreach($tab as $t)
+                    <div class="card-title fw-7" style="margin-right:550px"><img src="images/logo.jpg" alt="Avatar" style="width:80px;border-radius:50%">  {{$t['titre']}}<br></div>
+                    <div class="card-text fw-5" style="margin-right:470px">{{$t['created_at']}}</div><br>
+                    
+                    <div class="card-text fw-5" style="margin-right:100px;margin-left:100px">{{$t['description']}}</div><br><br>
+                    
+                    <br>
+                    @foreach($t['images'] as $images)
               <img src="{{asset('public/multiple_image/'.$images)}}" alt="" height="200px" width="200px">
-              @endforeach
-              @foreach($tab as $t)
+                     @endforeach
              
-            <div class="card-title fw-7">{{$t['titre']}}</div>
-            <div class="card-text fw-5">{{$t['description']}}</div>
-            <div class="card-text fw-5">{{$t['created_at']}}</div>
+            
+            
             <div class="card-right-body"></div><hr>
             
        

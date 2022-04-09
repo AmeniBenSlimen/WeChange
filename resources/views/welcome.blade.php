@@ -32,7 +32,7 @@ a {
 section {
   width: 100%;
   height: 95vh;
-  background-image: url("images/1.jpg");
+  background-image: url("images/bb.jpg");
   background-size: 100% 100%; 
   /*   background-color: #000000; */
   
@@ -943,7 +943,7 @@ video {
 
       <ul>
         <li><a href="{{route('index')}}" class="active">@lang('public.Acceuil')</a></li>
-        <li><a href="#sobre">@lang('public.Organization')</a></li>
+        <li><a href="{{route('organization')}}">@lang('public.Organization')</a></li>
         <li><a href="{{route('viewArticle')}}">@lang('public.Articles')</a></li>
         <li><a href="{{route('equipe')}}">@lang('public.Equipe')</a></li>
         <li><a href="{{route('contact')}}">@lang('public.Contact')</a></li>
@@ -969,12 +969,12 @@ video {
 
   <!--text----------------------->
 
- <!--  <div class="text-container" style="margin-reight:5px">
+   <div class="text-container" style="margin-reight:5px">
     <p>@lang('public.Organization')</p>
     <p>@lang('public.We Change')</p>
     <p style="color:black;size:30px">@lang('public.Ne cherchez pas la nature')<br>@lang('public.de l\'Esprit,')<br>@lang('public.mais plutôt l\'esprit de la Nature,')</p>
    
-  </div> -->
+  </div> 
 
   <!--model---------------------->
   

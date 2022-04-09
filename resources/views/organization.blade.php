@@ -1,133 +1,72 @@
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
 <style>
-    
-    body {
-  background-color: #f6f5f5;
-  font-family: "poppins", sans-serif;
-  margin: 0px;
-  padding: 0px;
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: verdana;
 }
 
-ul {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-}
-
-
-nav {
+.container {
+  width: 100%;
+  height: 100vh;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  height: 60px;
-  background-color: #ffffff;
-  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
-  padding: 0px 5%;
-}
-nav ul {
-  display: flex;
-}
-.toggle {
-  display: none;
 }
 
-nav ul li a {
-  margin: 30px;
-  font-family: myriad pro regular;
-  color: #505050;
-  font-size: 18px;
-  font-weight: 700;
+
+h1{
+  line-height: 1.1;
+  color: #371f1b;
 }
-.logo {
-  font-family: RoadTest;
-  color: #000000;
-  font-size: 22px;
-  font-weight: 1000;
+
+.text {
+  width: 47%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 3em;
+  line-height: 165%;
 }
-.active {
-  color: #2d2a2a;
+
+p {
+  padding-block: 2em;
+    color: darkgray;
+}
+
+button {
+  max-width: 240px;
+  background-color: transparent;
+  border-radius: 0.5em;
+  padding: 1em 2em;
+  border: none;
+  color: #901c0f;
   font-weight: bold;
-}
-nav  img{
-  height: 90px;
-    width: 150px;
-    border-radius: 50%;
-}
-.search-bar {
-  width: 90%;
-  max-width: 400px;
-  display: flex;
-  align-items: center;
-  border-radius: 60px;
-  border-color: rgba(129, 96, 221);
-  padding: 10px;
-}
-.search-bar input {
-  background: transparent;
-  flex: 1;
-  border: 1px solid black;
-  border-radius: 12px;
-  padding: 5p;
-  font-size: 20px;
-  max-width: 150px;
- height:40px;
-}
-::placeholder {
-  color: gray;
-  font-size:15px;
-}
-.search-bar button {
-  border: 0;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  margin-left:10px;
+  font-size: 1rem;
+  text-transform: uppercase;
 }
 
+.image {
+  width: 40%;
+  height: 100vh;
+  background-image: url("images/web.jpg");
+  background-size: cover;
+  background-position: center;
+}
 </style>
-<section id="home">
-    <!--navigation------------------------->
-    <nav>
-      
-      <!--logo-->
-      <a href="#home"><img src="images/logo.jpg"></a>
-      <!--menu-->
-      <div class="container">
-    
-    <form action="https://www.google.com/search" method="get"  class="search-bar" traget="_blank" style="margin-reight:60px">
-      <input type="text"  placeholder="@lang('public.Rechercher')" name="q">
-        <button type="submit"><i class="fas fa-search"></i></button>
-        
-    </form>
-
-</div>
-
-      <ul>
-        <li><a href="#home" class="active">@lang('public.Acceuil')</a></li>
-        <li><a href="#sobre">@lang('public.Organization')</a></li>
-        <li><a href="#projetos">@lang('public.Articles')</a></li>
-        <li><a href="#contato">@lang('public.Contact')</a></li>
-        
-      </ul>
-      <!--bars--------------->
-      <div class="toggle"></div>
-   
-<div class="dropdown" style="margin-reight:20px">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
-    @lang('public.Language') 
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-    <a href="locale/en" class="dropdown-item" type="button">English<i><img src="images/eng.webp" style="height: 30px;width: 30px;margin-left: 9px;font-size: 14px"></i></a>
-    <a href="locale/fr" class="dropdown-item" type="button">Français<i><img src="images/fr.webp" style="height:30px;width: 30px "></i> </a>
-    <a href="locale/ar" class="dropdown-item" type="button">Arabe<i><img src="images/tun.png" style="height: 30px;width: 30px;margin-left: 20px"></i> </a>
-    
+@include('layouts.header')
+<br>
+<div class="container">
+  <div class="decoration"></div>
+  <div class="text">
+    <h1>We Change نحن نغير</h1>
+    <p> C'est une Association non gouvernementale, fondée le 10 mai 2018, à but non lucratif, a pour objectif renforcer
+la citoyenneté et un développement équitable et durable à comme zone d’intervention le Nord-ouest</p>
   </div>
+  <div class="image"></div>
 </div>
-    </nav>
-    <div class="clearfix"></div>
-  </section>
+<br>
+
+@extends('layouts.footer')
+@extends('layouts.historique')

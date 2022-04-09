@@ -16,12 +16,13 @@
 
 <div class="uper">
 
-  @if(session()->get('success'))
+<div class="ameni">
+  
+@if(session()->get('success'))
     <div class="alert alert-success">
       {{ session()->get('success') }}  
     </div><br />
   @endif
-<div class="ameni">
   <table class="table table-striped">
 
     <thead>
@@ -48,7 +49,7 @@
             <td>{{$eq->prenom_membre}}</td>
             <td>{{$eq->specialite}}</td>
             <td>{{$eq->description_membre}}</td>
-            <td>{{$eq->image}}</td>
+            <td><img src="{{asset('images/'.$eq->image)}}" alt="" height="100px" width="100px"></td>
             <td>{{$eq->contact}}</td>
             
            

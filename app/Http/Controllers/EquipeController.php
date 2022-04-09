@@ -26,21 +26,13 @@ class EquipeController extends Controller
         return view('AllEquipe', compact('equipe'));
     }
    
-    public function modifierMembre($id)
-    {
-        
-        $equipe=Equipe::where('id',$id)->first();
-        
-
-        return view('modifierMembre',compact('equipe'));
-    }
-   
+    
     
         public function addMembre(){
             
             return view ('membre');
         }
-
+//getClientOriginalName :utilisé pour récupérer le nom d'origine du fichier au moment du téléchargement  
         public function MembreBD(Request $request)
             {
                 $equipe = new Equipe();
@@ -63,6 +55,15 @@ class EquipeController extends Controller
 
                     return redirect()->route('equipe')->with('success', 'Membre Ajouter avec succèss');
                 }
+        
+        public function modifierMembre($id)
+            {
+                    
+                $equipe=Equipe::where('id',$id)->first();
+                    
+                return view('modifierMembre',compact('equipe'));
+            }
+               
 
         public function editMembreBD(Request $request)
     {

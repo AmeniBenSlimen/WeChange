@@ -28,7 +28,7 @@ class Contacter extends Mailable
      */
     public function build(Request $request)
     {
-        return $this->from('amenibenslimen9@gmail.com') ->view('contactMail');
+        return $this->from('amenibenslimen@gmail.com') ->view('contactMail');
         
     }
 }

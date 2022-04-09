@@ -1,10 +1,13 @@
-
+@include('layouts.app')
 @extends('layouts.layoutss')
+
 
 @section('content')
 		<br/> <h2 class="text-center">Editer un Article</h2>
 		<br/>
+        
 		<div class="container">
+        
 			<form method="POST" action="{{route('editArticleBD')}}" enctype="multipart/form-data">
 				@csrf
 				<input type="hidden" name="id" value="{{$article->id}}" />
@@ -66,7 +69,7 @@
                       </div>
                                     
                    
-                      <br/>  <br/>
+                      <br>
                         <p>
                             <button type="submit" class="btn btn-warning" >Editer</button>
                            

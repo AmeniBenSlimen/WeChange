@@ -86,7 +86,7 @@ nav ul li a {
 
       <ul>
         <li><a href="{{route('index')}}" class="active">@lang('public.Acceuil')</a></li>
-        <li><a href="#sobre">@lang('public.Organization')</a></li>
+        <li><a href="{{route('organization')}}">@lang('public.Organization')</a></li>
         <li><a href="{{route('viewArticle')}}">@lang('public.Articles')</a></li>
         <li><a href="{{route('equipe')}}">@lang('public.Equipe')</a></li>
         <li><a href="{{route('contact')}}">@lang('public.Contact')</a></li>
